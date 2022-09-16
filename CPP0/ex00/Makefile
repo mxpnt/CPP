@@ -1,20 +1,20 @@
-NAME	=	megaphone
+NAME		=	megaphone
 
-SRC		=	megaphone.cpp
+SRC			=	megaphone.cpp
 
-OBJ		=	${SRC:.cpp=.o}
+OBJ			=	${SRC:.cpp=.o}
 
-CC		=	clang++
+CXX			=	clang++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 all:		${NAME}
 
 %.o:		%.cpp
-			${CC} ${CFLAGS} -c $< -o $@
+			${CXX} ${CFLAGS} -c $< -o $@
 
-${NAME}:	${OBJ}
-			${CC} ${CFLAGS} -o ${NAME} ${OBJ}
+${NAME}:	${OBJ} Makefile
+			${CXX} ${CXXFLAGS} -o ${NAME} ${OBJ}
 
 clean:
 			rm -rf ${OBJ}
