@@ -1,8 +1,13 @@
 NAME		=	phone
 
-INC			=	omg.hpp
+INC			=	phone.hpp \
+				phoneBookClass.hpp \
+				contactClass.hpp
 
-SRCS		=	test.cpp
+SRCS		=	main.cpp \
+				phoneBookClass.cpp \
+				contactClass.cpp
+
 
 OBJS		=	${addprefix objs/, ${SRCS:.cpp=.o}}
 
