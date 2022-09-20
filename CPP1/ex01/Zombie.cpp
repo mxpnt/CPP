@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 17:03:16 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 18:13:04 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/20 18:15:25 by mapontil          #+#    #+#             */
+/*   Updated: 2022/09/20 19:02:31 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string>
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
+}
 
-class	Zombie {
-private:
-	std::string _name;
-public:
-	void	setZombieName(std::string name);
-	void	announce(void);
-	Zombie(std::string name);
-	~Zombie();
-};
+std::string	Zombie::getName(void)
+{
+	return (this->_name);
+}
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie::Zombie(void)
+{
+	std::cout << "ZOMBIE HAS BEEN CREATED" << std::endl;
+	return ;
+}
 
-#endif
+Zombie::~Zombie(void)
+{
+	std::cout << this->_name << " HAS BEEN EXECUTED" << std::endl;
+	return ;
+}
