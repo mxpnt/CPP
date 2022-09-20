@@ -19,9 +19,9 @@ all:		${NAME}
 
 objs/%.o:	%.cpp ${INC} Makefile
 			@mkdir -p ${dir $@}
-			${CC} ${CFLAGS} -c $< -o $@
+			${CXX} ${CXXFLAGS} -c $< -o $@
 
-${NAME}:	${OBJS} ${INC}
+${NAME}:	${OBJS} ${INC} Makefile
 			${CXX} ${CXXFLAGS} -o ${NAME} ${OBJS}
 
 clean:

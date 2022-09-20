@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:35:50 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 12:54:29 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/20 13:49:32 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 int	Phonebook::get_contact_n(void) const
 {
-	return (this->contact_n);
+	return (contact_n);
 }
 
 Contact	*Phonebook::get_contact(int contact_n)
 {
-	return (&this->contact[contact_n]);
+	return (&contact[contact_n]);
 }
 
 int	Phonebook::valid_entry(std::string str, int i) const
 {
+	int	k = 0;
+
+	if (!str[k])
+		return (3);
 	if (i != 3)
 	{
 		for (int j = 0; str[j]; ++j)
@@ -41,7 +45,7 @@ int	Phonebook::valid_entry(std::string str, int i) const
 
 void	Phonebook::add_contact(void)
 {
-	Contact		*new_c = this->get_contact(this->get_contact_n());
+	Contact		*new_c = this->get_contact(get_contact_n());
 	std::string	str;
 	std::string	ask[5] = {"FIRST NAME : ", "LAST NAME : ", "NICKNAME : ", "PHONE NUMBER : ", "DARKEST SECRET : "};
 	
