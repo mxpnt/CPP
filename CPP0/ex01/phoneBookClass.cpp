@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:35:50 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/19 20:29:19 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:54:29 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,23 @@ void	Phonebook::reformat(std::string str)
 	std::cout << "|";
 }
 
+void	Phonebook::print_index(int index) const
+{
+	Contact	tmp = this->contact[index];
+
+	std::cout << tmp.get_fname() << std::endl;
+	std::cout << tmp.get_lname() << std::endl;
+	std::cout << tmp.get_nname() << std::endl;
+	std::cout << tmp.get_pnumber() << std::endl;
+	std::cout << tmp.get_dsecret() << std::endl;
+}
+
 void	Phonebook::search(int nb_contact)
 {
 	Contact		tmp;
 	std::string	str;
 
-	for (int i = 0; (i < 8 && nb_contact >= 8) || i < nb_contact; ++i)
+	for (int i = 0; (i < 8 && nb_contact > 7) || (i < nb_contact && i < 8); ++i)
 	{
 		tmp = this->contact[i];
 		std::cout << "|";
@@ -142,6 +153,24 @@ void	Phonebook::search(int nb_contact)
 	}
 	std::cout << "INDEX : ";
 	std::getline(std::cin, str);
+	if (str.compare("0") == 0 && nb_contact > 0)
+		this->print_index(0);
+	else if (str.compare("1") == 0 && nb_contact > 1)
+		this->print_index(1);
+	else if (str.compare("2") == 0 && nb_contact > 2)
+		this->print_index(2);
+	else if (str.compare("3") == 0 && nb_contact > 3)
+		this->print_index(3);
+	else if (str.compare("4") == 0 && nb_contact > 4)
+		this->print_index(4);
+	else if (str.compare("5") == 0 && nb_contact > 5)
+		this->print_index(5);
+	else if (str.compare("6") == 0 && nb_contact > 6)
+		this->print_index(6);
+	else if (str.compare("7") == 0 && nb_contact > 7)
+		this->print_index(7);
+	else
+		std::cout << "INVALID ENTRY" << std::endl;
 }
 
 Phonebook::Phonebook(void)

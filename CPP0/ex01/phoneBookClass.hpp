@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebookClass.hpp                                 :+:      :+:    :+:   */
+/*   phoneBookClass.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:50:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/19 19:51:10 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:29:39 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 		int				valid_entry(std::string str, int i) const;
 		void			add_contact(void);
 		void			reformat(std::string str);
+		void			print_index(int index) const;
 		void			search(int nb_contact);
 		Phonebook();
 		~Phonebook();

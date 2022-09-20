@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:32:46 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/19 20:10:27 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:57:49 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ int main(int argc, char **argv)
 			{
 				break ;
 			}
-			else
-				std::cout << "/!\\ INVALID COMMAND /!\\" << std::endl;
-			if (nb_contact == 8)
-				nb_contact = 0;
-			std::cout << phonebook.get_contact_n() << std::endl;
 		}
 	}
     return (0);
