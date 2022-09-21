@@ -11,6 +11,10 @@ SRCS		=	main.cpp \
 
 OBJS		=	${addprefix objs/, ${SRCS:.cpp=.o}}
 
+CXX			=	clang++
+
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
 all:			${NAME}
 
 objs/%.o:	%.cpp ${INC} Makefile
