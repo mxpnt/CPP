@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:15:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 12:32:09 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/23 11:45:20 by mapontil          #+#    #+#             */
+/*   Updated: 2022/09/23 12:36:49 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <math.h>
 
 class	Fixed {
 private:
@@ -22,13 +23,19 @@ private:
 	static const int	_nbBits = 8;
 public:
 	Fixed();
+	Fixed(const int value);
+	Fixed(const float value);
 	Fixed(const Fixed &f);
 	~Fixed();
 
-	Fixed & operator=(Fixed const & f);
+	Fixed & operator=(Fixed const &f);
 
 	int					getRawBits(void) const;
 	void				setRawBits(int const raw);
+	float				toFloat(void) const;
+	int					toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream &os, Fixed const &obj);
 
 #endif
