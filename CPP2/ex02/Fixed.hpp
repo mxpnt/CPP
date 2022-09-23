@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:45:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 14:54:43 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:03:59 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,36 @@ public:
 	Fixed(const Fixed &f);
 	~Fixed();
 
-	Fixed & operator=(Fixed const &f);
+	Fixed &operator = (Fixed const &f);
 
 	int					getRawBits(void) const;
 	void				setRawBits(int const raw);
 	float				toFloat(void) const;
 	int					toInt(void) const;
+
+	bool	operator > (Fixed const &f) const;
+	bool	operator < (Fixed const &f) const;
+	bool	operator >= (Fixed const &f) const;
+	bool	operator <= (Fixed const &f) const;
+	bool	operator == (Fixed const &f) const;
+	bool	operator != (Fixed const &f) const;
+
+	Fixed	operator + (Fixed const &f);
+	Fixed	operator - (Fixed const &f);
+	Fixed	operator * (Fixed const &f);
+	Fixed	operator / (Fixed const &f);
+
+	Fixed	operator ++ ();
+	Fixed	operator ++ (int);
+	Fixed	operator -- ();
+	Fixed	operator -- (int);
+
+	Fixed const	&max(Fixed const &f, Fixed const &j);
+	Fixed		&max(Fixed &f, Fixed &j);
+	Fixed const	&min(Fixed const &f, Fixed const &j);
+	Fixed		&min(Fixed &f, Fixed &j);
 };
 
-std::ostream& operator<<(std::ostream &os, Fixed const &obj);
+std::ostream	&operator<<(std::ostream &os, Fixed const &obj);
 
 #endif

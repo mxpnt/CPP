@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:20:47 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 12:34:26 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:04:24 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int const	Fixed::_nbBits = 8;
 
 Fixed::Fixed()
 {

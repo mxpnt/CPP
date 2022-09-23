@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:51:06 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 12:36:54 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:02:28 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int const	Fixed::_nbBits = 8;
 
 Fixed::Fixed()
 {
@@ -21,13 +23,13 @@ Fixed::Fixed()
 Fixed::Fixed(const int value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_value = value;
+	_value = value << _nbBits;
 }
 
 Fixed::Fixed(const float value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	_value = value;
+	this->_value = roundf(value * (1 << _nbBits));
 }
 
 Fixed::Fixed(const Fixed &f)
@@ -61,12 +63,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (roundf(this->_value));
+	return ((float)this->_value / (1 << this->_nbBits));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (this->_value);
+	return (this->_value >> this->_nbBits);
 }
 
 std::ostream&	operator<<(std::ostream &os,Fixed const &obj)
