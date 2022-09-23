@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:45:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 15:03:59 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/23 15:07:15 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ public:
 	Fixed	operator -- ();
 	Fixed	operator -- (int);
 
-	Fixed const	&max(Fixed const &f, Fixed const &j);
-	Fixed		&max(Fixed &f, Fixed &j);
-	Fixed const	&min(Fixed const &f, Fixed const &j);
-	Fixed		&min(Fixed &f, Fixed &j);
+	static Fixed const	&max(Fixed const &f, Fixed const &j);
+	static Fixed		&max(Fixed &f, Fixed &j);
+	static Fixed const	&min(Fixed const &f, Fixed const &j);
+	static Fixed		&min(Fixed &f, Fixed &j);
 };
 
 std::ostream	&operator<<(std::ostream &os, Fixed const &obj);
