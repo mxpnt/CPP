@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 13:52:19 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 10:22:27 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/22 16:22:57 by mapontil          #+#    #+#             */
+/*   Updated: 2022/09/23 10:21:48 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,32 @@ std::string	Harl::mod[4] = {
 
 void	Harl::complain(std::string level)
 {
+	int	mod;
+
+	mod = -1;
 	for (int i = 0; i < 4; ++i)
 	{
 		if (level == this->mod[i])
-			(this->*f[i])();
+		{
+			mod = i;
+			break;
+		}
+	}
+	switch (mod)
+	{
+		case 0:
+			this->_debug();
+		case 1:
+			this->_info();
+		case 2:
+			this->_warning();
+		case 3:
+			this->_error();
 	}
 }
 
 Harl::Harl()
 {
-	this->f[0] = &Harl::_debug;
-	this->f[1] = &Harl::_info;
-	this->f[2] = &Harl::_warning;
-	this->f[3] = &Harl::_error;
 	return ;
 }
 
