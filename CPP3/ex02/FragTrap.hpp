@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:49:08 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 16:56:56 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/25 17:09:49 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ScavTrap.hpp"
 
-class	FragTrap : public ScavTrap {
+class	FragTrap : public ClapTrap {
 private:
 public:
 	FragTrap();
