@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:47:00 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 10:59:11 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/25 15:55:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main()
 {
 	ClapTrap	a("Max");
 
-	a.attack("Zgeg");
+	a.attack("Zge");
+	a.beRepaired(6);
 	return (0);
 }

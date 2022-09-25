@@ -6,13 +6,18 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:01:21 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 11:04:21 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/25 15:54:19 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string const name): _name(name), _hp(10), _energy(10), _ad(2)
+ClapTrap::ClapTrap()
+{
+	return ;
+}
+
+ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _energy(10), _ad(2)
 {
 	std::cout << "Default constructor called" << std::endl;
 	return ;
@@ -24,11 +29,20 @@ ClapTrap::~ClapTrap()
 	return ;
 }
 
+ClapTrap	&ClapTrap::operator = (ClapTrap const &rhs)
+{
+	this->_name = rhs._name;
+	this->_hp = rhs._hp;
+	this->_energy = rhs._energy;
+	this->_ad = rhs._ad;
+	return (*this);
+}
+
 void	ClapTrap::attack(const std::string &target)
 {
 	ClapTrap	tmp(target);
 
-	if (tmp._energy > 0 && tmp._hp > 0)
+	if (this->_energy > 0 && this->_hp > 0)
 	{
 		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing "
 		<< _ad << " points of damage" << std::endl;
@@ -36,6 +50,10 @@ void	ClapTrap::attack(const std::string &target)
 		this->_energy -= 1;
 		std::cout << "ClapTrap " << _name << " has " << _energy << " energy remaining" << std::endl;
 	}
+	else if (this->_energy < 1)
+		std::cout << this->_name << " can't attack because he doesn't have enough energy" << std::endl;
+	else
+		std::cout << this->_name << " is dead. Impossible to attack" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -51,8 +69,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		std::cout << "ClapTrap " << _name << " has " << _hp;
 		this->_hp += amount;
-		std::cout << " and healing him to " << _hp << " (+" << amount << ")" << std::endl;
+		std::cout << " and he heals himself " << amount << " (he has now " << _hp << " hp)" << std::endl;
 		this->_energy -= 1;
 		std::cout << "ClapTrap " << _name << " has " << _energy << " energy remaining" << std::endl;
 	}
+	else if (this->_energy < 1)
+		std::cout << this->_name << " can't heal himself because he doesn't have enough energy" << std::endl;
+	else
+		std::cout << this->_name << " is dead. Impossible to heal himself" << std::endl;
 }
