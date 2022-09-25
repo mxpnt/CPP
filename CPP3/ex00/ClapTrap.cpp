@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:01:21 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 16:28:03 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/25 17:07:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energy > 0 && this->_hp)
+	if (this->_energy > 0 && this->_hp > 0)
 	{
 		std::cout << "ClapTrap " << _name << " has " << _hp;
 		this->_hp += amount;

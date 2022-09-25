@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 10:47:00 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 16:44:32 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/25 16:49:08 by mapontil          #+#    #+#             */
+/*   Updated: 2022/09/25 16:56:56 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main()
-{
-	ClapTrap	a("Max");
-	ScavTrap	b("Ploppp");
+# include "ScavTrap.hpp"
 
-	a.attack("Zge");
-	a.beRepaired(6);
-	b.attack(a._name);
-	a.beRepaired(10);
-	b.guardGate();
-	return (0);
-}
+class	FragTrap : public ScavTrap {
+private:
+public:
+	FragTrap();
+	FragTrap(std::string const name);
+	FragTrap(FragTrap const &f);
+	~FragTrap();
+
+	FragTrap	&operator=(FragTrap const &rhs);
+
+	void		highFivesGuys(void);
+};
+
+#endif
