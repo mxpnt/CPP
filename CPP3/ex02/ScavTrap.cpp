@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:03:56 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 17:03:28 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/26 10:37:27 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,49 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 	this->_energy = rhs._energy;
 	this->_ad = rhs._ad;
 	return (*this);
+}
+
+void	ScavTrap::attack(std::string const &target)
+{
+	if (this->_energy > 0 && this->_hp > 0)
+	{
+		std::cout << "ScavTrap " << _name << " attacks " << target << ", causing "
+		<< _ad << " points of damage" << std::endl;
+		this->_energy -= 1;
+		std::cout << "ScavTrap " << _name << " has " << _energy << " energy remaining" << std::endl;
+	}
+	else if (this->_energy < 1)
+		std::cout << this->_name << " can't attack because he doesn't have enough energy" << std::endl;
+	else
+		std::cout << this->_name << " is dead. Impossible to attack" << std::endl;
+}
+
+void	ScavTrap::takeDamage(unsigned int amount)
+{
+	if (this->_hp > 0)
+	{
+		this->_hp -= amount;
+		std::cout << "ScavTrap " << _name << " takes " << amount << " damage" << std::endl;
+		std::cout << "ScavTrap " << _name << " hp is now " << _hp << std::endl;
+	}
+	else
+		std::cout << _name << " can't take damage. He is already dead" << std::endl;
+}
+
+void	ScavTrap::beRepaired(unsigned int amount)
+{
+	if (this->_energy > 0 && this->_hp > 0)
+	{
+		std::cout << "ScavTrap " << _name << " has " << _hp;
+		this->_hp += amount;
+		std::cout << " and he heals himself " << amount << " (he has now " << _hp << " hp)" << std::endl;
+		this->_energy -= 1;
+		std::cout << "ScavTrap " << _name << " has " << _energy << " energy remaining" << std::endl;
+	}
+	else if (this->_energy < 1)
+		std::cout << this->_name << " can't heal himself because he doesn't have enough energy" << std::endl;
+	else
+		std::cout << this->_name << " is dead. Impossible to heal himself" << std::endl;
 }
 
 void	ScavTrap::guardGate()

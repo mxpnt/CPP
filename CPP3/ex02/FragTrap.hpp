@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:49:08 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 17:09:49 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/26 10:40:01 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ public:
 	~FragTrap();
 
 	FragTrap	&operator=(FragTrap const &rhs);
-
+	void		attack(std::string  const &target);
+	void		takeDamage(unsigned int amount);
+	void		beRepaired(unsigned int amount);
 	void		highFivesGuys(void);
 };
 

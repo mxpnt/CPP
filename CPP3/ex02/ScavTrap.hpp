@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:01:43 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 16:13:47 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/09/26 10:37:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ public:
 
 	ScavTrap	&operator=(ScavTrap const &rhs);
 
+	void		attack(std::string  const &target);
+	void		takeDamage(unsigned int amount);
+	void		beRepaired(unsigned int amount);
 	void		guardGate();
 };
 
