@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:48:36 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:10:35 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 15:22:09 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int	main(void)
 	a.printIdeas();
 	std::cout << "----------------" << std::endl;
 	b.printIdeas();
+
+	std::cout << a.getType() << std::endl;
+	std::cout << b.getType() << std::endl;
 
 	return (0);
 }
