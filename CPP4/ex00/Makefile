@@ -2,12 +2,16 @@ NAME		=	sound
 
 INC			=	AnimalClass.hpp \
 				DogClass.hpp \
-				CatClass.hpp
+				CatClass.hpp \
+				WrongAnimalClass.hpp \
+				WrongCatClass.hpp
 
 SRCS		=	main.cpp \
 				AnimalClass.cpp \
 				DogClass.cpp \
-				CatClass.cpp
+				CatClass.cpp \
+				WrongAnimalClass.cpp \
+				WrongCatClass.cpp
 
 OBJS		=	${addprefix objs/, ${SRCS:.cpp=.o}}
 
