@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:58:45 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 12:12:01 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:16:12 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal()
 WrongAnimal::WrongAnimal(WrongAnimal const &f)
 {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
-	type = f.type;
+	*this = f;
 }
 
 WrongAnimal::~WrongAnimal()

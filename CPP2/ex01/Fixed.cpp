@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:51:06 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 15:02:28 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:24:52 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ Fixed::Fixed(const float value)
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_value = f._value;
+	*this = f;
+	// _value = f._value;
 }
 
 Fixed::~Fixed()

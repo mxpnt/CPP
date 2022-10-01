@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   BrainClass.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:15:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:52:59 by mapontil         ###   ########.fr       */
+/*   Created: 2022/10/01 12:15:08 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/01 13:47:45 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef BRAINCLASS_HPP
+# define BRAINCLASS_HPP
 
 # include <iostream>
 # include <string>
 
-class	Fixed {
+class	Brain	{
 private:
-	int					_value;
-	static const int	_nbBits;
+protected:
+	std::string	ideas[100];
 public:
-	Fixed();
-	Fixed(const Fixed &f);
-	~Fixed();
+	Brain();
+	Brain(Brain const &f);
+	~Brain();
 
-	Fixed & operator=(Fixed const & f);
+	Brain	&operator=(Brain const &rhs);
 
-	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
+	void				setIdea(std::string const &idea);
+	std::string const	getIdea(int n) const;
 };
 
 #endif

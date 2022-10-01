@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   AnimalClass.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:15:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:52:59 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/26 18:35:09 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/01 13:27:23 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ANIMALCLASS_HPP
+# define ANIMALCLASS_HPP
 
 # include <iostream>
 # include <string>
 
-class	Fixed {
+class	Animal	{
 private:
-	int					_value;
-	static const int	_nbBits;
+protected:
+	std::string	type;
 public:
-	Fixed();
-	Fixed(const Fixed &f);
-	~Fixed();
+	Animal();
+	Animal(Animal const &f);
+	virtual ~Animal();
 
-	Fixed & operator=(Fixed const & f);
+	Animal	&operator=(Animal const &rhs);
 
-	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
+	std::string		getType() const;
+	virtual void	makeSound() const;
 };
 
 #endif

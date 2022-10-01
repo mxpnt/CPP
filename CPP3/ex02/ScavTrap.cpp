@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:03:56 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/26 10:37:27 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:20:19 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ ScavTrap::~ScavTrap()
 
 ScavTrap::ScavTrap(ScavTrap const &f)
 {
-	_name = f._name;
-	_hp = f._hp;
-	_energy = f._energy;
-	_ad = f._ad;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = f;
+	// _name = f._name;
+	// _hp = f._hp;
+	// _energy = f._energy;
+	// _ad = f._ad;
 }
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)

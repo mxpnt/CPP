@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:01:21 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 17:14:36 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:23:05 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(ClapTrap const &f)
 {
-	_name = f._name;
-	_hp = f._hp;
-	_energy = f._energy;
-	_ad = f._ad;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = f;
+	// _name = f._name;
+	// _hp = f._hp;
+	// _energy = f._energy;
+	// _ad = f._ad;
 }
 
 ClapTrap	&ClapTrap::operator = (ClapTrap const &rhs)

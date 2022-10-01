@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:38:10 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 11:43:31 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:16:53 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal()
 Animal::Animal(Animal const &f)
 {
 	std::cout << "Animal copy construcor called" << std::endl;
-	type = f.type;
+	*this = f;
 }
 
 Animal::~Animal()

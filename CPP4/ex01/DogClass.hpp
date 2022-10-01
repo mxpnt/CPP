@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DogClass.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:15:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:52:59 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/26 18:44:33 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/01 13:46:12 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DOGCLASS_HPP
+# define DOGCLASS_HPP
 
-# include <iostream>
-# include <string>
+# include "AnimalClass.hpp"
+# include "BrainClass.hpp"
 
-class	Fixed {
+class	Dog : public Animal	{
 private:
-	int					_value;
-	static const int	_nbBits;
+	Brain	*_brain;
 public:
-	Fixed();
-	Fixed(const Fixed &f);
-	~Fixed();
+	Dog();
+	Dog(Dog const &f);
+	~Dog();
 
-	Fixed & operator=(Fixed const & f);
+	Dog	&operator=(Dog const &rhs);
 
-	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
+	virtual void		makeSound() const;
+	void				addIdea(std::string const &idea);
+	void				printIdeas() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:51:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/26 10:40:48 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:21:38 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ FragTrap::FragTrap(std::string const name)
 
 FragTrap::FragTrap(FragTrap const &f)
 {
-	_name = f._name;
-	_hp = f._hp;
-	_energy = f._energy;
-	_ad = f._energy;
+	std::cout << "FragTrap copy constructor called" << std::endl;
+	*this = f;
+	// _name = f._name;
+	// _hp = f._hp;
+	// _energy = f._energy;
+	// _ad = f._energy;
 }
 
 FragTrap::~FragTrap()

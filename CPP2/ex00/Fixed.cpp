@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:20:47 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/23 15:04:24 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/01 14:52:52 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_value = f._value;
+	*this = f;
+	// _value = f._value;
 }
 
 Fixed::~Fixed()

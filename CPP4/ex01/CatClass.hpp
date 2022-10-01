@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   CatClass.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 11:15:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:52:59 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/26 18:43:15 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/01 14:07:05 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CATCLASS_HPP
+# define CATCLASS_HPP
 
-# include <iostream>
-# include <string>
+# include "AnimalClass.hpp"
+# include "BrainClass.hpp"
 
-class	Fixed {
+class	Cat : public Animal	{
 private:
-	int					_value;
-	static const int	_nbBits;
+	Brain	*_brain;
 public:
-	Fixed();
-	Fixed(const Fixed &f);
-	~Fixed();
+	Cat();
+	Cat(Cat const &f);
+	~Cat();
 
-	Fixed & operator=(Fixed const & f);
+	Cat	&operator=(Cat const &rhs);
 
-	int					getRawBits(void) const;
-	void				setRawBits(int const raw);
+	virtual void		makeSound() const;
+	void				addIdea(std::string const &idea);
+	void				printIdeas() const;
 };
 
 #endif

@@ -5,33 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/25 10:47:00 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:21:00 by mapontil         ###   ########.fr       */
+/*   Created: 2022/09/30 11:48:36 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/01 14:10:35 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "AnimalClass.hpp"
+#include "CatClass.hpp"
+#include "DogClass.hpp"
+#include "BrainClass.hpp"
 
-int	main()
+int	main(void)
 {
-	// ClapTrap	a("Max");
-	ScavTrap	b("Ploppp");
-	// FragTrap	c("Vannoooo");
-	ScavTrap	c(b);
+	Animal	*tab[10] = {new Dog(), new Cat(), new Dog(), new Cat(), new Dog(), new Cat(), new Cat(), new Dog(), new Dog(), new Cat()};
 
-	// a.attack("Zge");
-	// a.beRepaired(6);
-	// b.attack(a._name);
-	// a.beRepaired(10);
-	// b.guardGate();
-	// c.attack("frago");
-	// c.highFivesGuys();
-	// c.takeDamage(10000);
-	// c.highFivesGuys();
-	// c.beRepaired(100);
-	b.attack("YAO");
-	c.attack("zgeggg");
+	for (int i = 0; i < 10; ++i)
+		tab[i]->makeSound();
+	for (int i = 0; i < 10; ++i)
+		delete tab[i];
+
+	Cat	a;
+	
+	Cat	b(a);
+	
+	a.addIdea("I like milk");
+
+	a.printIdeas();
+	std::cout << "----------------" << std::endl;
+	b.printIdeas();
+
 	return (0);
 }
