@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:49:04 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 15:22:45 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/02 10:45:54 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	Cat::printIdeas() const
 	i = 0;
 	while (this->_brain->getIdea(i) != "" && i < 100)
 	{
-		std::cout << this->_brain->getIdea(i) << " is my idea number " << i << std::endl;
+		std::cout << "\"" << this->_brain->getIdea(i) << "\"" << "is my idea number " << i << std::endl;
 		++i;
 	}
 }

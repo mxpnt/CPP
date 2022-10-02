@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:48:36 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 12:10:56 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/02 10:51:55 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "DogClass.hpp"
 #include "WrongAnimalClass.hpp"
 #include "WrongCatClass.hpp"
+
+/* Uncomment to test with class Animal */
 
 int	main(void)
 {

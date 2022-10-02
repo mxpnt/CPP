@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:48:36 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 15:22:09 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/02 10:50:14 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,26 @@ int	main(void)
 		delete tab[i];
 
 	Cat	a;
-	
 	Cat	b(a);
 	
 	a.addIdea("I like milk");
-
 	a.printIdeas();
 	std::cout << "----------------" << std::endl;
 	b.printIdeas();
 
 	std::cout << a.getType() << std::endl;
 	std::cout << b.getType() << std::endl;
+
+	Dog c;
+	Dog	d(c);
+
+	c.addIdea("I like meat");
+	c.printIdeas();
+	std::cout << "----------------" << std::endl;
+	d.printIdeas();
+
+	std::cout << c.getType() << std::endl;
+	std::cout << d.getType() << std::endl;
 
 	return (0);
 }

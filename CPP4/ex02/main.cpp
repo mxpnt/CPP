@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:48:36 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 15:40:34 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/02 10:49:12 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "CatClass.hpp"
 #include "DogClass.hpp"
 #include "BrainClass.hpp"
+
+/* Uncomment second line to test abstract class AAnimal */
 
 int	main(void)
 {
@@ -26,17 +28,26 @@ int	main(void)
 		delete tab[i];
 
 	Cat	a;
-	
 	Cat	b(a);
 	
 	a.addIdea("I like milk");
-
 	a.printIdeas();
 	std::cout << "----------------" << std::endl;
 	b.printIdeas();
 
 	std::cout << a.getType() << std::endl;
 	std::cout << b.getType() << std::endl;
+
+	Dog c;
+	Dog	d(c);
+
+	c.addIdea("I like meat");
+	c.printIdeas();
+	std::cout << "----------------" << std::endl;
+	d.printIdeas();
+
+	std::cout << c.getType() << std::endl;
+	std::cout << d.getType() << std::endl;
 
 	return (0);
 }
