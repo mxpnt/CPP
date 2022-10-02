@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:44:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 11:42:24 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/02 10:59:16 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	Dog	&operator=(Dog const &rhs);
 
-	virtual void		makeSound() const;
+	void		makeSound() const;
 };
 
 #endif

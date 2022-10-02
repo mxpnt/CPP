@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:43:15 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 11:42:11 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/02 10:58:25 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	Cat	&operator=(Cat const &rhs);
 
-	virtual void		makeSound() const;
+	void		makeSound() const;
 };
 
 #endif
