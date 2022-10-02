@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateriaClass.cpp                                  :+:      :+:    :+:   */
+/*   IceClass.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 11:12:39 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/02 11:34:09 by mapontil         ###   ########.fr       */
+/*   Created: 2022/10/02 11:32:13 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/02 12:11:12 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateriaClass.hpp"
+#include "IceClass.hpp"
+#include "ICharacterClass.hpp"
 
 /***** CONSTRUCTORS AND DESTRUCTOR *****/
 
-AMateria::AMateria()
+Ice::Ice()
 {
+	this->_type = "ice";
 }
 
-AMateria::AMateria(AMateria const &f)
+Ice::Ice(Ice const &f)
 {
 	*this = f;
 }
 
-AMateria::AMateria(std::string const &type): _type(type)
-{
-}
-
-AMateria::~AMateria()
+Ice::~Ice()
 {
 }
 
 /***** OPERATOR *****/
 
-AMateria	&AMateria::operator=(AMateria const &rhs)
+Ice	&Ice::operator=(Ice const &rhs)
 {
 	this->_type = rhs._type;
 	return (*this);
@@ -41,9 +39,14 @@ AMateria	&AMateria::operator=(AMateria const &rhs)
 
 /***** MEMBER FUNCTIONS *****/
 
-std::string const	&AMateria::getType() const
+Ice	*Ice::clone()
 {
-	return (this->_type);
+	Ice	*clone = new Ice();
+
+	return (clone);
 }
 
-
+void	Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+}
