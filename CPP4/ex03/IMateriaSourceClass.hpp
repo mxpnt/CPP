@@ -1,17 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacterClass.cpp                                :+:      :+:    :+:   */
+/*   IMateriaSourceClass.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 12:29:45 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/02 12:30:10 by mapontil         ###   ########.fr       */
+/*   Created: 2022/10/03 08:08:02 by mapontil          #+#    #+#             */
+/*   Updated: 2022/10/03 08:30:24 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacterClass.hpp"
+#ifndef IMATERIASOURCECLASS_HPP
+# define IMATERIASOURCECLASS_HPP
 
-ICharacter::~ICharacter()
-{
-}
+# include "AMateriaClass.hpp"
+// class	AMateria;
+
+class	IMateriaSource	{
+public:
+	virtual				~IMateriaSource() {}
+	virtual void		learnMateria(AMateria*) = 0;
+	virtual AMateria	*createMateria(std::string const &type) = 0;
+};
+
+#endif

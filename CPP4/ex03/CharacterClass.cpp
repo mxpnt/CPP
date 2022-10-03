@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 11:57:35 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/02 13:06:26 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/03 08:42:47 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ void	Character::equip(AMateria *m)
 	while (i < 4 && this->_items[i] != NULL)
 		++i;
 	if (i == 4)
-		std::cout << "Inventory full" << std::endl;
+		std::cout << "Character's inventory is full" << std::endl;
 	else
 	{
 		this->_items[i] = m;
-		std::cout << m->getType() << " materia equipped at slot number " << i << std::endl;
+		std::cout << m->getType() << " materia equipped at slot number " << i << " (Character)" << std::endl;
 	}
 }
 
