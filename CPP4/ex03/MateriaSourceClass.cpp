@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 08:20:54 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/03 08:55:25 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/03 10:08:31 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,17 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 	int	i;
 
 	i = 0;
-	while (this->_items[i + 1] != NULL && this->_items[i] != NULL)
-		++i;
-	
+	if (type != "Ice" && type != "Cure")
+		return (0);
+	if (this->_items[i + 1] != NULL && this->_items[i] != NULL)
+	{
+		while (this->_items[i + 1])
+			++i;
+	}
+
+	AMateria	*a(this->_items[i]);
+
+	a->setType(type);
+	// std::cout << a->getType() << std::endl;
+	return (a);
 }

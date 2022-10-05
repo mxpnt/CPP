@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 11:57:35 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/03 08:42:47 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/03 10:14:22 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,8 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter &target)
 {
-
+	if (this->_items[idx]->getType() == "Ice")
+		this->_items[idx]->use(target);
+	else if (this->_items[idx]->getType() == "Cure")
+		this->_items[idx]->use(target);
 }
