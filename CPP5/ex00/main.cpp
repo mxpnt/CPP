@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 11:47:19 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:01:24 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	main(void)
 		try
 		{
 			second.gradeUp();
+			std::cout << second;
 		}
 		catch (std::exception &e)
 		{
@@ -62,6 +63,7 @@ int	main(void)
 		try
 		{
 			second.gradeDown();
+			std::cout << second;
 		}
 		catch (std::exception &e)
 		{
