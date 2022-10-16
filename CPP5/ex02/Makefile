@@ -1,11 +1,17 @@
-NAME		=	form
+NAME		=	form2
 
 INC			=	Bureaucrat.hpp \
-				Form.hpp
+				Form.hpp \
+				ShrubberyCreationForm.hpp \
+				RobotomyRequestForm.hpp \
+				PresidentialPardonForm.hpp
 
 SRCS		=	main.cpp \
 				Bureaucrat.cpp \
-				Form.cpp
+				Form.cpp \
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp
 
 OBJS		=	${addprefix objs/, ${SRCS:.cpp=.o}}
 
