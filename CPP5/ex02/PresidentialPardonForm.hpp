@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:24:30 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 17:26:22 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:11:21 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 # include "Form.hpp"
-
 class	Presidential : public Form	{
 private:
 	std::string	_target;
@@ -25,6 +24,8 @@ public:
 	~Presidential();
 
 	Presidential	&operator=(Presidential const &rhs);
+
+	void	execute(Bureaucrat const &executor) const;
 };
 
 #endif

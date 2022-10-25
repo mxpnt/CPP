@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:47:38 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 17:22:30 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:17:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,17 @@ Shrubbery	&Shrubbery::operator=(Shrubbery const &rhs)
 	this->_target = rhs._target;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
+
+void	Shrubbery::execute(Bureaucrat const &executor) const
+{
+	try
+	{
+		checkGradeSign(executor);
+		std::cout << executor.getName() << " executed " << this->getName() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << executor.getName() << " can't execute this form because: " << e.what() << std::endl;
+	}

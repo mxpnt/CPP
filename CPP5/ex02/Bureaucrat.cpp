@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 13:11:46 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:16:09 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,10 @@ void	Bureaucrat::signForm(Form &form)
 	{
 		try
 		{
-			if (_grade > form.getSigned())
+			if (_grade > form.getGradeSign())
+			{
 				throw Bureaucrat::GradeTooLowException();
+			}
 			else
 				form.beSigned(*this);
 		}

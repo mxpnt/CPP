@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 13:28:13 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 17:22:34 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:18:32 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ private:
 public:
 	Shrubbery();
 	Shrubbery(std::string const target);
-	Shrubbery();
+	Shrubbery(Shrubbery const &f);
 	~Shrubbery();
 
 	Shrubbery	&operator=(Shrubbery const &rhs);
+
+	void	execute(Bureaucrat const &executor) const;
 };
 
 #endif

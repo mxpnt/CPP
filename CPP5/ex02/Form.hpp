@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:52:07 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 17:06:58 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:40:39 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ private:
 	bool				_signed;
 	size_t const		_gradeSign;
 	size_t const		_gradeExec;
+protected:
+	void	checkGradeSign(Bureaucrat const &executor) const;
 public:
 	Form();
 	Form(std::string const name, size_t const sign, size_t const exec);
@@ -36,6 +38,7 @@ public:
 	size_t				getGradeSign() const;
 	size_t				getGradeExec() const;
 	void				beSigned(Bureaucrat const &someone);
+	virtual void		execute(Bureaucrat const &executor) const = 0;
 
 	class	GradeTooHighException : public std::exception	{
 		public:
@@ -49,6 +52,13 @@ public:
 			virtual const char* what() const throw()
 			{
 				return ("Grade too low to signed");
+			}
+	};
+	class	FormNotSigned : public std::exception	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Form is not signed");
 			}
 	};
 };
