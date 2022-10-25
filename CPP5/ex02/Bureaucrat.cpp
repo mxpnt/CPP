@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:16:09 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:23:19 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,9 @@ void	Bureaucrat::signForm(Form &form)
 			std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 		}
 	}
+}
+
+void	Bureaucrat::executeForm(Form const &form)
+{
+	form.execute(*this);
 }

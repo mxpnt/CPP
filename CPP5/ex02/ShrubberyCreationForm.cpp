@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:47:38 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:17:43 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:24:22 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,4 @@ void	Shrubbery::execute(Bureaucrat const &executor) const
 	{
 		std::cout << executor.getName() << " can't execute this form because: " << e.what() << std::endl;
 	}
+}

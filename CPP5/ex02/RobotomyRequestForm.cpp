@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:18:10 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:18:02 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:24:26 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,4 @@ void	Robotomy::execute(Bureaucrat const &executor) const
 	{
 		std::cout << executor.getName() << " can't execute this form because: " << e.what() << std::endl;
 	}
-	
+}

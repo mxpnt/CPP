@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:15:32 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:24:56 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(void)
 	Bureaucrat		one("Max", 2);
 	Bureaucrat		two("Jo", 21);
 
-	A.execute(one);
+	one.executeForm(A);
 	one.signForm(A);
-	A.execute(one);
+	one.executeForm(A);
 	return (0);
 }

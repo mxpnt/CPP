@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 09:45:47 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 09:40:47 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:21:20 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void				gradeUp();
 	void				gradeDown();
 	void				signForm(Form &form);
+	void				executeForm(Form const &form);
 
 	class	GradeTooHighException : public std::exception	{
 		public:
