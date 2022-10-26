@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:31:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/26 14:52:08 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:54:38 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,5 @@ void	iter(T *tab, size_t size, void(*f)(T&))
 		++i;
 	}
 }
-
 
 #endif
