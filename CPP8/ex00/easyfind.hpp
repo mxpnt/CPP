@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:12:04 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/27 18:38:48 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:56:22 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <list>
+# include <vector>
 # include <exception>
 
 // class	Exception {
@@ -29,21 +30,21 @@
 // };
 
 template <typename T>
-int const	easyfind(T container, int n)
+int	easyfind(T container, int n)
 {
-	// Excp						Epp;
 	typename T::const_iterator	it = container.begin();
 	typename T::const_iterator	ite = container.end();
-	int							save = *container.begin();
+	// int	save = *container.begin();
+
 
 	for (it = container.begin(); it != ite; ++it)
 	{
-		if (save == n)
+		if (static_cast<int>(*it) == n)
 			break ;
-		save = static_cast<int>(*it);
+		// save = static_cast<int>(*it);
 	}
-	if (save == n)
-		return (save);
+	if (it != ite && static_cast<int>(*it) == n)
+		return (static_cast<int>(*it));
 	else
 		throw NotFindOccur();
 }
