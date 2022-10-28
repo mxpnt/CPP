@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:15:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/28 14:49:10 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:34:36 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 class	Span	{
 private:
 	std::vector<int>	_v;
+	unsigned int		_nbElem;
 public:
 	Span();
 	Span(unsigned int n);
@@ -32,6 +33,7 @@ public:
 	void	addNumber(int nb);
 	int		shortestSpan() const;
 	int		longestSpan() const;
+	void	print() const;
 };
 
 #endif
