@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:15:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/27 20:58:34 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:49:10 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <vector>
+# include <algorithm>
 
 class	Span	{
 private:
