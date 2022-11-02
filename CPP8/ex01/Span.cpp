@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:18:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/28 16:34:24 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:42:09 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,14 @@ void	Span::addNumber(int nb)
 {
 	static size_t	i = 0;
 	
-	if (i < _v.size())
+	if (i < _v.capacity())
 	{
 		_v.at(i) = nb;
 		++i;
 		this->_nbElem++;
 	}
+	else
+		throw TooMuchElemAdd();
 }
 
 int	Span::shortestSpan() const
@@ -115,11 +117,31 @@ int	Span::longestSpan() const
 	return (result);
 }
 
-void myfunction (int i) {  // function:
+void	spaceFunction(int i)
+{
   std::cout << ' ' << i;
 }
 
 void	Span::print() const
 {
-	std::for_each(_v.begin(), _v.end(), myfunction);
+	std::for_each(_v.begin(), _v.end(), spaceFunction);
+}
+
+void	Span::addN(int i, int n)
+{
+	_v.at(i) = n;
+}
+
+void	Span::addNNumber(int nb, int x)
+{
+	if (_nbElem + x > _v.capacity())
+		throw TooMuchElemAdd();
+	else
+	{
+		for (int i = 0; i < x; ++i)
+		{
+			this->_v.at(_nbElem) = nb;
+			this->_nbElem++;
+		}
+	}
 }

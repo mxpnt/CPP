@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:15:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/28 16:34:36 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:40:38 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string>
 # include <vector>
 # include <algorithm>
+# include <exception>
 
 class	Span	{
 private:
@@ -34,6 +35,15 @@ public:
 	int		shortestSpan() const;
 	int		longestSpan() const;
 	void	print() const;
+	void	addN(int i, int n);
+	void	addNNumber(int nb, int x);
+
+	class	TooMuchElemAdd : public std::exception	{
+		public:
+			virtual const char* what() const throw() {
+				return ("Too many int want to be added");
+			}
+	};
 };
 
 #endif
