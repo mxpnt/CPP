@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:10:58 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 12:59:39 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:51:58 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,9 @@ int	main(void)
 	randomChump("Didier");
 	randomChump("Poee");
 	
+	Zombie	def;
+	
+	def.announce();
+
 	return (0);
 }

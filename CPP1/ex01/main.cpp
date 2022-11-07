@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:46:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 13:46:47 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:53:49 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,10 @@ int	main(void)
 		horde[i].announce();
 	}
 	delete [] horde;
+
+	Zombie	def;
+
+	def.announce();
+
 	return (0);
 }
