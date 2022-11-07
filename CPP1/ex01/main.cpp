@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:46:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 19:02:59 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:46:47 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ int	main(void)
 	Zombie	*horde;
 
 	horde = zombieHorde(14, "HENRY");
-	// std::cout << horde[6].getName() << std::endl;
+	for (int i = 0; i < 14; ++i)
+	{
+		std::cout << "Index: " << i << std::endl;
+		horde[i].announce();
+	}
 	delete [] horde;
 	return (0);
 }

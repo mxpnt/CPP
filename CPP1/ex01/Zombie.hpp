@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:12:39 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 19:00:51 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 13:36:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 public:
 	void		setName(std::string name);
 	std::string	getName(void);
+	void		announce(void);
 	Zombie();
 	~Zombie();
 };
