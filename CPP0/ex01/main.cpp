@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:32:46 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 12:57:49 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:08:14 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	std::string	str;
 	int			nb_contact;
 
+	(void) argv;
 	if (argc == 1)
 	{
 		nb_contact = 0;
