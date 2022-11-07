@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:06:28 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 17:51:23 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:48:51 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ Zombie::Zombie(std::string name): _name(name)
 Zombie::~Zombie(void)
 {
 	std::cout << this->_name << " DESTROYED" << std::endl;
-	return ;
 }

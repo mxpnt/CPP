@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 17:36:48 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 18:03:25 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:50:36 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,6 @@
 void	randomChump(std::string name)
 {
 	Zombie	newZombie = Zombie(name);
+
+	newZombie.announce();
 }
