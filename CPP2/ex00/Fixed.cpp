@@ -6,13 +6,15 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:20:47 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:52:52 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:32:03 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int const	Fixed::_nbBits = 8;
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 Fixed::Fixed()
 {
@@ -25,7 +27,6 @@ Fixed::Fixed(const Fixed &f)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = f;
-	// _value = f._value;
 }
 
 Fixed::~Fixed()
@@ -34,12 +35,16 @@ Fixed::~Fixed()
 	return ;
 }
 
+/***** OPERAOTR *****/
+
 Fixed	&Fixed::operator=(Fixed const &f)
 {
-	std::cout << "Assignation member called" << std::endl;
-	this->_value = f._value;
+	std::cout << "Copy assignation operator called" << std::endl;
+	this->_value = f.getRawBits();
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 int	Fixed::getRawBits(void) const
 {
