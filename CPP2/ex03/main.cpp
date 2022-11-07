@@ -6,7 +6,15 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 09:19:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 09:19:27 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:07:37 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
+#include "Point.hpp"
+
+int main(void)
+{
+    
+    return (0);
+}
