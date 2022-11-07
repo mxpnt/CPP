@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:20:47 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 15:32:03 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:41:55 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	_value = 0;
-	return ;
 }
 
 Fixed::Fixed(const Fixed &f)
@@ -32,14 +31,13 @@ Fixed::Fixed(const Fixed &f)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
-	return ;
 }
 
-/***** OPERAOTR *****/
+/***** OPERATOR *****/
 
 Fixed	&Fixed::operator=(Fixed const &f)
 {
-	std::cout << "Copy assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = f.getRawBits();
 	return (*this);
 }
