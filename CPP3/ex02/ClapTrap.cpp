@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:01:21 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:21:48 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:00:36 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 ClapTrap::ClapTrap()
 {
@@ -34,11 +36,9 @@ ClapTrap::ClapTrap(ClapTrap const &f)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = f;
-	// _name = f._name;
-	// _hp = f._hp;
-	// _energy = f._energy;
-	// _ad = f._ad;
 }
+
+/***** OPERATOR *****/
 
 ClapTrap	&ClapTrap::operator = (ClapTrap const &rhs)
 {
@@ -48,6 +48,8 @@ ClapTrap	&ClapTrap::operator = (ClapTrap const &rhs)
 	this->_ad = rhs._ad;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	ClapTrap::attack(const std::string &target)
 {

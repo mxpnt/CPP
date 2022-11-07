@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:47:00 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:21:00 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:08:27 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,18 @@
 
 int	main()
 {
-	// ClapTrap	a("Max");
+	ClapTrap	a("Max");
 	ScavTrap	b("Ploppp");
-	// FragTrap	c("Vannoooo");
-	ScavTrap	c(b);
+	FragTrap	c("Vannoooo");
+	FragTrap	d(c);
 
-	// a.attack("Zge");
-	// a.beRepaired(6);
-	// b.attack(a._name);
-	// a.beRepaired(10);
-	// b.guardGate();
-	// c.attack("frago");
-	// c.highFivesGuys();
-	// c.takeDamage(10000);
-	// c.highFivesGuys();
-	// c.beRepaired(100);
-	b.attack("YAO");
-	c.attack("zgeggg");
+	d.attack("Bluuuu");
+	d.highFivesGuys();
+	d.beRepaired(0);
+	for (int i = 0; i < 3; ++i)
+		d.takeDamage(50);
+	d.attack("Bluuuu");
+	d.highFivesGuys();
+	d.beRepaired(1);
 	return (0);
 }

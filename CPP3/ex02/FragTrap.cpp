@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:51:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:21:38 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:02:10 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 FragTrap::FragTrap()
 {
@@ -30,16 +32,14 @@ FragTrap::FragTrap(FragTrap const &f)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = f;
-	// _name = f._name;
-	// _hp = f._hp;
-	// _energy = f._energy;
-	// _ad = f._energy;
 }
 
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
 }
+
+/***** OPERATOR *****/
 
 FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 {
@@ -49,6 +49,8 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 	this->_ad = rhs._ad;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	FragTrap::attack(std::string const &target)
 {
