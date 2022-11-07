@@ -6,13 +6,15 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:51:06 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:24:24 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:49:26 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int const	Fixed::_nbBits = 8;
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 Fixed::Fixed()
 {
@@ -36,7 +38,6 @@ Fixed::Fixed(const Fixed &f)
 {
 	// std::cout << "Copy constructor called" << std::endl;
 	*this = f;
-	// _value = f._value;
 }
 
 Fixed::~Fixed()
@@ -44,12 +45,23 @@ Fixed::~Fixed()
 	// std::cout << "Destructor called" << std::endl;
 }
 
-Fixed	&Fixed::operator = (Fixed const &f)
+/***** OPERATORS *****/
+
+Fixed	&Fixed::operator=(Fixed const &f)
 {
-	// std::cout << "Assignation operateur called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = f._value;
 	return (*this);
 }
+
+
+std::ostream	&operator<<(std::ostream &os,Fixed const &obj)
+{
+	os << obj.toFloat();
+	return os;
+}
+
+/***** MEMBER FUNCTIONS *****/
 
 int	Fixed::getRawBits(void) const
 {
@@ -200,10 +212,4 @@ Fixed	&Fixed::min(Fixed &f, Fixed &j)
 	if (f._value < j._value)
 		return (f);
 	return (j);
-}
-
-std::ostream	&operator<<(std::ostream &os,Fixed const &obj)
-{
-	os << obj.toFloat();
-	return os;
 }
