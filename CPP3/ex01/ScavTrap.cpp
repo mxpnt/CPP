@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 16:03:56 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:22:43 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:44:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 ScavTrap::ScavTrap()
 {
@@ -35,11 +37,9 @@ ScavTrap::ScavTrap(ScavTrap const &f)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = f;
-	// _name = f._name;
-	// _hp = f._hp;
-	// _energy = f._energy;
-	// _ad = f._ad;
 }
+
+/***** OPERATOR *****/
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 {
@@ -49,6 +49,8 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 	this->_ad = rhs._ad;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	ScavTrap::attack(std::string const &target)
 {

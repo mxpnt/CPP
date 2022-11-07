@@ -6,39 +6,36 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:01:21 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:22:26 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:43:44 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
+
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
-	return ;
 }
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _energy(10), _ad(2)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
-	return ;
 }
 
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap destructor called" << std::endl;
-	return ;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &f)
 {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = f;
-	// _name = f._name;
-	// _hp = f._hp;
-	// _energy = f._energy;
-	// _ad = f._ad;
 }
+
+/***** OPERATOR *****/
 
 ClapTrap	&ClapTrap::operator = (ClapTrap const &rhs)
 {
@@ -48,6 +45,8 @@ ClapTrap	&ClapTrap::operator = (ClapTrap const &rhs)
 	this->_ad = rhs._ad;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	ClapTrap::attack(const std::string &target)
 {
