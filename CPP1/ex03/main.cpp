@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 11:37:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/21 13:37:30 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:38:18 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	main(void)
 {
 	{
-		Weapon club = Weapon("crude spiked club");
+		Weapon club = Weapon();
 		HumanA bob("Bob", club);
 		bob.attack();
 		club.setType("some other type of club");
@@ -32,6 +32,5 @@ int	main(void)
 		club.setType("some other type of club");
 		jim.attack();
 	}
-return 0;
 	return (0);
 }

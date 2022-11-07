@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:05:04 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/21 13:33:49 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:29:16 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ private:
 	std::string	_name;
 	Weapon		*_Weapon;
 public:
-	void		setWeapon(Weapon &type);
-	void		attack(void) const;
 	HumanB(std::string name);
 	~HumanB();
+
+	void		setWeapon(Weapon &type);
+	void		attack(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 11:38:47 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/21 13:35:06 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:12:20 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ class	Weapon {
 private:
 	std::string	_type;
 public:
-	const std::string	&getType();
-	void		setType(std::string type);
+	Weapon();
 	Weapon(std::string type);
 	~Weapon();
+
+	const std::string	&getType() const;
+	void				setType(std::string type);
 };
 
 #endif
