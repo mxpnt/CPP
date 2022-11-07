@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:04:50 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 16:41:36 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:26:03 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
+	// std::cout << "DESTRUCTOR CALLED " << _accountIndex << std::endl;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";
