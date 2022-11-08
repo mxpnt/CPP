@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:58:45 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:16:12 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 09:28:45 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimalClass.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 WrongAnimal::WrongAnimal()
 {
@@ -28,11 +30,15 @@ WrongAnimal::~WrongAnimal()
 	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
+/***** OPERATOR *****/
+
 WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &rhs)
 {
 	this->type = rhs.type;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 std::string	WrongAnimal::getType() const
 {
