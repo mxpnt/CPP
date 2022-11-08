@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AnimalClass.hpp                                    :+:      :+:    :+:   */
+/*   AAnimalClass.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:35:09 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 15:37:52 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:42:00 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMALCLASS_HPP
-# define ANIMALCLASS_HPP
+#ifndef AANIMALCLASS_HPP
+# define AANIMALCLASS_HPP
 
 # include <iostream>
 # include <string>

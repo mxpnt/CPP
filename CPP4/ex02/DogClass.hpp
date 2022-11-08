@@ -6,14 +6,14 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:44:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 15:38:57 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:42:13 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOGCLASS_HPP
 # define DOGCLASS_HPP
 
-# include "AnimalClass.hpp"
+# include "AAnimalClass.hpp"
 # include "BrainClass.hpp"
 
 class	Dog : public AAnimal	{

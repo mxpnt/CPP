@@ -1,12 +1,12 @@
 NAME		=	abstract
 
-INC			=	AnimalClass.hpp \
+INC			=	AAnimalClass.hpp \
 				DogClass.hpp \
 				CatClass.hpp \
 				BrainClass.hpp
 
 SRCS		=	main.cpp \
-				AnimalClass.cpp \
+				AAnimalClass.cpp \
 				DogClass.cpp \
 				CatClass.cpp \
 				BrainClass.cpp

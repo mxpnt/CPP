@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:49:04 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/02 10:45:54 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:36:22 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "CatClass.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 Cat::Cat()
 {
@@ -33,12 +35,16 @@ Cat::~Cat()
 	std::cout << "Cat destructor called" << std::endl;
 }
 
+/***** OPERATOR *****/
+
 Cat	&Cat::operator=(Cat const &rhs)
 {
 	this->type = rhs.type;
 	*this->_brain = *rhs._brain;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	Cat::makeSound() const
 {
