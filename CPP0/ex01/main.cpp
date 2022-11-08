@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 10:32:46 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 12:08:14 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:27:04 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main(int argc, char **argv)
 		{
 			std::cout << "ENTER COMMAND :" << std::endl;
 			std::getline(std::cin, str);
+			if (std::cin.eof())
+				exit(1);
 			if (str.compare("ADD") == 0)
 			{
 				phonebook.add_contact();

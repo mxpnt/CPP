@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 13:50:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 12:29:39 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:43:48 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 		Contact			*get_contact(int n_contact);
 		int				valid_entry(std::string str, int i) const;
 		void			add_contact(void);
+		void			reformatint(int i);
 		void			reformat(std::string str);
 		void			print_index(int index) const;
 		void			search(int nb_contact);

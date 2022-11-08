@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:04:50 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 12:26:03 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:29:10 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	Account::_displayTimestamp(void)
 
     std::strftime( cstr, sizeof(cstr), "[%Y%m%d_%H%M%S] ", std::gmtime(&curr) );
 	std::cout << cstr;
+	// std::cout << "[19920104_091532] "; 
 }
 
 int	Account::getNbAccounts(void)
@@ -54,8 +55,8 @@ void	Account::displayAccountsInfos(void)
 	_displayTimestamp();
 	std::cout << "accounts:" << getNbAccounts() << ";";
 	std::cout << "total:" << getTotalAmount() << ";";
-	std::cout << "depostis:" << getNbDeposits() << ";";
-	std::cout << "withdrawals:" << getNbWithdrawals() << ";" << std::endl;
+	std::cout << "deposits:" << getNbDeposits() << ";";
+	std::cout << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
 void	Account::makeDeposit(int deposit)
@@ -108,7 +109,7 @@ void	Account::displayStatus(void) const
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "deposits:" << this->_nbDeposits << ";";
-	std::cout << "withdrawals:" << this->_nbWithdrawals << ";" << std::endl;
+	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
 Account::Account(int initial_deposit)
@@ -128,7 +129,6 @@ Account::Account(int initial_deposit)
 
 Account::~Account(void)
 {
-	// std::cout << "DESTRUCTOR CALLED " << _accountIndex << std::endl;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "amount:" << _amount << ";";

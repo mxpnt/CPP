@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 14:35:50 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/20 13:49:32 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:50:25 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	Phonebook::add_contact(void)
 	{
 		std::cout << ask[i];
 		std::getline(std::cin, str);
+		if (std::cin.eof())
+			exit(1);
 		if (this->valid_entry(str, i) == 0)
 		{
 			switch (i)
@@ -84,6 +86,13 @@ void	Phonebook::add_contact(void)
 		this->contact_n++;
 	else
 		this->contact_n = 0;
+}
+
+void	Phonebook::reformatint(int i)
+{
+	char b = i + 48;
+
+	std::cout << b << "         |";
 }
 
 void	Phonebook::reformat(std::string str)
@@ -132,24 +141,20 @@ void	Phonebook::search(int nb_contact)
 	{
 		tmp = this->contact[i];
 		std::cout << "|";
-		for (int j = 0; j < 5; ++j)
+		for (int j = 0; j < 4; ++j)
 		{
 			switch (j)
 			{
 				case 0:
+					this->reformatint(i);
+				case 1:
 					this->reformat(tmp.get_fname());
 					break ;
-				case 1:
+				case 2:
 					this->reformat(tmp.get_lname());
 					break ;
-				case 2:
-					this->reformat(tmp.get_nname());
-					break ;
 				case 3:
-					this->reformat(tmp.get_pnumber());
-					break ;
-				case 4:
-					this->reformat(tmp.get_dsecret());
+					this->reformat(tmp.get_nname());
 					break ;
 			}
 		}
@@ -157,6 +162,8 @@ void	Phonebook::search(int nb_contact)
 	}
 	std::cout << "INDEX : ";
 	std::getline(std::cin, str);
+	if (std::cin.eof())
+		exit(1);
 	if (str.compare("0") == 0 && nb_contact > 0)
 		this->print_index(0);
 	else if (str.compare("1") == 0 && nb_contact > 1)
