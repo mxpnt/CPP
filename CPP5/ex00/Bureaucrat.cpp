@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 11:25:39 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:52:03 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 Bureaucrat::Bureaucrat()
 {
-
 }
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned int const grade): _name(name)
@@ -39,7 +38,7 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-/***** OPERATOR *****/
+/***** OPERATORS *****/
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
@@ -53,7 +52,7 @@ std::ostream	&operator<<(std::ostream &os, Bureaucrat const &obj)
 	return (os);
 }
 
-/***** MEMBER FUNCTION *****/
+/***** MEMBER FUNCTIONS *****/
 
 std::string const	Bureaucrat::getName() const
 {

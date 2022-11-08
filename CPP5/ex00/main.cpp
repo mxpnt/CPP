@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 13:01:24 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:55:12 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 int	main(void)
 {
 	unsigned int	grade;
-	std::string		name;
+	std::string		name = "Titi";
 
 	std::cout << "Enter grade: ";
 	std::cin >> grade;
 	std::cout << "Grade enter: " << grade << std::endl;
-	std::cout << "Enter name: ";
-	std::cin >> name;
-	std::cout << "Name enter: " << name << std::endl;
 	try
 	{
 		Bureaucrat	*first = new Bureaucrat(name, grade);

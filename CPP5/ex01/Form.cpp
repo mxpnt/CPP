@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:57:53 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 13:03:35 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 11:11:58 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Form::~Form()
 {
 }
 
-/***** OPERATOR *****/
+/***** OPERATORS *****/
 
 Form	&Form::operator=(Form const &rhs)
 {
