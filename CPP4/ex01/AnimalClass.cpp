@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:38:10 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 14:01:17 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:08:19 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AnimalClass.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 Animal::Animal()
 {
@@ -28,11 +30,15 @@ Animal::~Animal()
 	std::cout << "Animal destructor called" << std::endl;
 }
 
+/***** OPERATOR *****/
+
 Animal	&Animal::operator=(Animal const &rhs)
 {
 	this->type = rhs.type;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 std::string	Animal::getType() const
 {

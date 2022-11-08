@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 12:16:16 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 13:49:53 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:09:28 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BrainClass.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 Brain::Brain()
 {
@@ -28,12 +30,16 @@ Brain::~Brain()
 	std::cout << "Brain destructor called" << std::endl;
 }
 
+/***** OPERATOR *****/
+
 Brain	&Brain::operator=(Brain const &rhs)
 {
 	for (int i = 0; i < 100; ++i)
 		this->ideas[i] = rhs.ideas[i];
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	Brain::setIdea(std::string const &idea)
 {

@@ -6,11 +6,13 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:47:17 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/02 10:49:39 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/08 10:11:01 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DogClass.hpp"
+
+/***** CONSTRUCTORS AND DESTRUCTOR *****/
 
 Dog::Dog()
 {
@@ -33,12 +35,16 @@ Dog::~Dog()
 	std::cout << "Dog destructor called" << std::endl;
 }
 
+/***** OPERATOR *****/
+
 Dog	&Dog::operator=(Dog const &rhs)
 {
 	this->type = rhs.type;
 	*this->_brain = *rhs._brain;
 	return (*this);
 }
+
+/***** MEMBER FUNCTIONS *****/
 
 void	Dog::makeSound() const
 {
