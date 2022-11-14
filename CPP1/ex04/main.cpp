@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 13:39:52 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/21 19:14:51 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:50:51 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	main(int argc, char **argv)
 	
 	if (argc == 4)
 	{
+
+		toFind = argv[2];
+		if (toFind == "")
+			return (3);
 		newfile = (std::string)argv[1] + ".replace";
 		ifs.open(argv[1]);
 		if (ifs.fail())
@@ -38,15 +42,15 @@ int	main(int argc, char **argv)
 		buf << ifs.rdbuf();
 		ifs.close();
 		bufStr = buf.str();
-		std::cout << bufStr << std::endl;
-		toFind = argv[2];
 		sub = argv[3];
 		found = bufStr.find(toFind);
+		size_t	popos = 0;
 		while (found != std::string::npos)
 		{
 			bufStr.erase(found, toFind.length());
 			bufStr.insert(found, sub);
-			found = bufStr.find(toFind);
+			popos += found + toFind.length() + 1;
+			found = bufStr.find(toFind, popos);
 		}
 		ofs.open(newfile);
 		if (ofs.fail())
