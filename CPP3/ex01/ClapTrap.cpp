@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:01:21 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 16:43:44 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 08:56:03 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _energy(10), _ad(2)
+ClapTrap::ClapTrap(std::string name): _name(name), _hp(10), _energy(10), _ad(0)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
 }
