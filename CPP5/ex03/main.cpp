@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 14:34:27 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:47:05 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int	main(void)
 {
-	Form	*ppf[2];
+	Form	*ppf[3];
 
 	srand(time(NULL));
 
@@ -30,16 +30,19 @@ int	main(void)
 
 		ppf[0] = A.makeForm("Presidential", "zowi");
 		ppf[1] = A.makeForm("Robotomy", "mopi");
+		ppf[2] = A.makeForm("Shrubbery", "maresque");
 		one.signForm(*ppf[0]);
 		one.signForm(*ppf[1]);
+		one.signForm(*ppf[2]);
 		ppf[0]->execute(one);
 		ppf[1]->execute(one);
+		ppf[2]->execute(one);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	for (int i = 0; i < 2; ++i)
+	for (int i = 0; i < 3; ++i)
 		delete ppf[i];
 	return (0);
 }
