@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:47:38 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:24:22 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:26:36 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ Shrubbery::Shrubbery(Shrubbery const &f)
 	_target = f._target;
 }
 
+Shrubbery::~Shrubbery()
+{
+}
+
 /***** OPERATORS *****/
 
 Shrubbery	&Shrubbery::operator=(Shrubbery const &rhs)
@@ -39,13 +43,22 @@ Shrubbery	&Shrubbery::operator=(Shrubbery const &rhs)
 
 void	Shrubbery::execute(Bureaucrat const &executor) const
 {
+	std::string		filename = _target + "_shrubbery";
+	std::ofstream	ofs(filename);
+
+	if (ofs.good() == false)
+	{
+		std::cout << "OFS PROBLEM" << std::endl;
+		return ;
+	}
 	try
 	{
 		checkGradeSign(executor);
-		std::cout << executor.getName() << " executed " << this->getName() << std::endl;
+		ofs << " *   *\n*** ***\n |   |" << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << executor.getName() << " can't execute this form because: " << e.what() << std::endl;
 	}
+	ofs.close();
 }

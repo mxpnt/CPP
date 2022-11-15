@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:23:19 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:56:22 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,32 @@ unsigned int	Bureaucrat::getGrade() const
 
 void	Bureaucrat::gradeUp()
 {
-	if (_grade - 1 < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else
-		this->_grade--;
+	try
+	{
+		if (_grade - 1 < 1)
+			throw Bureaucrat::GradeTooHighException();
+		else
+			this->_grade--;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::gradeDown()
 {
-	if (_grade + 1 > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		this->_grade++;
+	try
+	{
+		if (_grade + 1 > 150)
+			throw Bureaucrat::GradeTooLowException();
+		else
+			this->_grade++;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::signForm(Form &form)
@@ -89,12 +103,7 @@ void	Bureaucrat::signForm(Form &form)
 	{
 		try
 		{
-			if (_grade > form.getGradeSign())
-			{
-				throw Bureaucrat::GradeTooLowException();
-			}
-			else
-				form.beSigned(*this);
+			form.beSigned(*this);
 		}
 		catch (std::exception &e)
 		{

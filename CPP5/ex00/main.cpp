@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/08 10:55:12 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:50:41 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,38 +34,29 @@ int	main(void)
 
 /***********************************************************************************/
 
-	Bureaucrat	second("Baby", grade);
-	std::string	test;
-
-	std::cout << second;
-	std::cout << "Enter UP or DOWN: ";
-	std::cin >> test;
-	while (test != "UP" && test != "DOWN")
-		std::cin >> test;
-	std::cout << "Command entered: " << test << std::endl;
-	if (test == "UP")
+	try
 	{
-		try
+		Bureaucrat	second("Baby", grade);
+		std::string	test;
+
+		std::cout << second;
+		std::cout << "Enter UP or DOWN: ";
+		std::cin >> test;
+		while (test != "UP" && test != "DOWN")
+			std::cin >> test;
+		std::cout << "Command entered: " << test << std::endl;
+		if (test == "UP")
 		{
 			second.gradeUp();
-			std::cout << second;
 		}
-		catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
-	}
-	else
-	{
-		try
+		else
 		{
 			second.gradeDown();
-			std::cout << second;
 		}
-		catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
 	return (0);
 }

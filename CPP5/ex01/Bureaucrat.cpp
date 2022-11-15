@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/08 11:26:20 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:56:06 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 Bureaucrat::Bureaucrat()
 {
-
 }
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned int const grade): _name(name)
@@ -67,18 +66,32 @@ unsigned int	Bureaucrat::getGrade() const
 
 void	Bureaucrat::gradeUp()
 {
-	if (_grade - 1 < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else
-		this->_grade--;
+	try
+	{
+		if (_grade - 1 < 1)
+			throw Bureaucrat::GradeTooHighException();
+		else
+			this->_grade--;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::gradeDown()
 {
-	if (_grade + 1 > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		this->_grade++;
+	try
+	{
+		if (_grade + 1 > 150)
+			throw Bureaucrat::GradeTooLowException();
+		else
+			this->_grade++;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 void	Bureaucrat::signForm(Form &form)

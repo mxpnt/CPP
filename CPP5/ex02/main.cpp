@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:24:56 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:53:56 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 
 int	main(void)
 {
-	Presidential	A("Garden");
+	Shrubbery		A("Garden");
 	Bureaucrat		one("Max", 2);
 	Bureaucrat		two("Jo", 21);
 
+	srand(time(NULL));
+	
 	one.executeForm(A);
 	one.signForm(A);
 	one.executeForm(A);

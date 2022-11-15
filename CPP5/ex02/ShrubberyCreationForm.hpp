@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 13:28:13 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:18:32 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:03:15 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include "Form.hpp"
+
+# include <fstream>
+# include <sstream>
 
 class	Shrubbery : public Form {
 private:

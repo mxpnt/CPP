@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:18:10 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 11:24:26 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:36:05 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,16 @@ Robotomy	&Robotomy::operator=(Robotomy const &rhs)
 
 void	Robotomy::execute(Bureaucrat const &executor) const
 {
+	int	n = rand() % 2;
+
 	try
 	{
 		checkGradeSign(executor);
-		std::cout << executor.getName() << " executed " << this->getName() << std::endl;
+		std::cout << "VZZZZZZZZZZZZZzzzzzzzzZZZZZZZZZZZZzzzzzz...." << std::endl; 
+		if (n)
+			std::cout << _target << " has been robotomized" << std::endl;
+		else
+			std::cout << _target << " has not been robotomized /!\\ FAILURE /!\\" << std::endl;
 	}
 	catch (std::exception &e)
 	{

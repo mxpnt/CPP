@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 12:36:26 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 14:34:27 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,27 @@
 
 int	main(void)
 {
-	// Presidential	A("Garden");
-	Bureaucrat		one("Max", 2);
-	// Bureaucrat		two("Jo", 21);
+	Form	*ppf[2];
 
-	// one.executeForm(A);
-	// one.signForm(A);
-	// one.executeForm(A);
+	srand(time(NULL));
 
-	Intern	A;
-	Form	*ppf;
-	ppf = A.makeForm("Presidential", "zgeg");
+	try
+	{
+		Bureaucrat		one("Max", 5);
+		Intern	A;
 
-	ppf->execute(one);
-
-	delete [] ppf;
+		ppf[0] = A.makeForm("Presidential", "zowi");
+		ppf[1] = A.makeForm("Robotomy", "mopi");
+		one.signForm(*ppf[0]);
+		one.signForm(*ppf[1]);
+		ppf[0]->execute(one);
+		ppf[1]->execute(one);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	for (int i = 0; i < 2; ++i)
+		delete ppf[i];
 	return (0);
 }
