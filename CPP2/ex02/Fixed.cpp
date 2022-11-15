@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:51:06 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 15:49:26 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:05:44 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ Fixed	Fixed::operator -- (int)
 {
 	Fixed	tmp;
 
-	tmp._value = tmp._value++;
+	tmp._value = tmp._value--;
 	return (tmp);
 }
 
