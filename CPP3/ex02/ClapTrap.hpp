@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 09:56:29 by mapontil          #+#    #+#             */
-/*   Updated: 2022/09/25 16:07:47 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:25:28 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 
 class	ClapTrap {
 private:
-public:
+protected:
 	std::string			_name;
 	int					_hp;
 	int					_energy;
 	int					_ad;
+public:
 	
 	ClapTrap();
 	ClapTrap(std::string name);

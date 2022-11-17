@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 10:47:00 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/07 16:57:00 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:26:58 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main()
 	a.attack("Zge");
 	a.beRepaired(6);
 	std::cout << "\nScavTrap test:" << std::endl;
+	b.attack("Bru");
 	b.beRepaired(1);
 	b.guardGate();
 	for (int i = 0; i < 3; ++i)
