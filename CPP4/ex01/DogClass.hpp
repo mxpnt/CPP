@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:44:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/01 13:46:12 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 11:04:05 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
 	Dog();
 	Dog(Dog const &f);
-	~Dog();
+	virtual ~Dog();
 
 	Dog	&operator=(Dog const &rhs);
 

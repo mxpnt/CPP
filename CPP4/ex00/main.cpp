@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:48:36 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/08 10:39:18 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 10:54:07 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //cat sound
 	j->makeSound(); //dog sound
+	i->makeSound(); //cat sound
 	meta->makeSound(); //animal sound
 	std::cout << std::endl;
 	delete meta;
@@ -38,17 +38,21 @@ int	main(void)
 	const WrongAnimal* metaw = new WrongAnimal();
 	const Animal* jw = new Dog();
 	const WrongAnimal* iw = new WrongCat();
+	const WrongCat*	kw = new WrongCat();
 
 	std::cout << std::endl;
 	std::cout << jw->getType() << " " << std::endl;
 	std::cout << iw->getType() << " " << std::endl;
-	iw->makeSound(); //wrong animal sound
-	jw->makeSound(); // dog sound
+	std::cout << kw->getType() << " " << std::endl;
 	metaw->makeSound(); // wrong animal sound
+	jw->makeSound(); // dog sound
+	iw->makeSound(); //wrong animal sound
+	kw->makeSound(); // wrong cat sound
 	std::cout << std::endl;
 	delete metaw;
 	delete jw;
 	delete iw;
+	delete kw;
 
 	return (0);
 }
