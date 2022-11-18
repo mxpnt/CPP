@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:57:53 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 11:19:01 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:54:58 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Form::Form(): _name("DEFAULT"), _signed(false), _gradeSign(50), _gradeExec(50)
 
 Form::Form(std::string const name, size_t const sign, size_t const exec): _name(name), _signed(false), _gradeSign(sign), _gradeExec(exec)
 {
+	if (sign < 1 || exec < 1)
+		throw Form::GradeTooHighException();
+	else if (sign > 150 || exec > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(Form const &f): _name(f.getName()), _signed(false), _gradeSign(f.getGradeSign()), _gradeExec(f.getGradeExec())
@@ -31,7 +35,7 @@ Form::~Form()
 {
 }
 
-/***** OPERATOR *****/
+/***** OPERATORS *****/
 
 Form	&Form::operator=(Form const &rhs)
 {
@@ -73,7 +77,10 @@ void	Form::beSigned(Bureaucrat const &someone)
 	if (someone.getGrade() > this->_gradeSign)
 		throw Form::GradeTooLowException();
 	else
+	{
 		_signed = true;
+		std::cout << someone.getName() << " signed " << this->getName() << " form\n";
+	}
 }
 
 void	Form::checkGradeSign(Bureaucrat const &executor) const

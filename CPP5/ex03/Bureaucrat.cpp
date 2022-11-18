@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:00:49 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 12:56:22 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:59:32 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 Bureaucrat::Bureaucrat()
 {
-
 }
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned int const grade): _name(name)

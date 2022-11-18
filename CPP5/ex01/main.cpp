@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/08 11:27:37 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:49:21 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,18 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	std::cout << "*********************************" << std::endl;
+	try
+	{
+		Form	ok("WEEEEE", 150, 150);
+
+		std::cout << ok << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	return (0);
 }

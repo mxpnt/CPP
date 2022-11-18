@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 16:47:38 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 14:26:36 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:55:22 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	Shrubbery::execute(Bureaucrat const &executor) const
 	{
 		checkGradeSign(executor);
 		ofs << " *   *\n*** ***\n |   |" << std::endl;
+		std::cout << executor.getName() << " execute " << this->getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{

@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:52:07 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/09 13:21:15 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:47:55 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,18 @@ public:
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("Grade too high to signed");
+				return ("Grade is too high");
 			}
 	};
+
 	class	GradeTooLowException : public std::exception	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return ("Grade is too low");
+			}
+	};
+	class	GradeTooLowSignException : public std::exception	{
 		public:
 			virtual const char* what() const throw()
 			{
