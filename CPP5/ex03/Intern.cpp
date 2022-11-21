@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:30:32 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 12:22:38 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/21 09:33:25 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,38 +50,31 @@ Form	*Intern::makeForm(std::string const name, std::string const target)
 {
 	Form	*F;
 
-	try
+	int	type = -1;
+	for (int i = 0; i < 3; ++i)
 	{
-		int	type = -1;
-		for (int i = 0; i < 3; ++i)
+		if (name == this->_name[i])
 		{
-			if (name == this->_name[i])
-			{
-				type = i;
-				break ;
-			}
-		}
-		switch (type)
-		{
-			case -1:
-				throw FormIncorrectType();
-			case 0:
-				F = new Presidential(target);
-				std::cout << "Intern creates " << F->getName() << std::endl;
-				break ;
-			case 1:
-				F = new Robotomy(target);
-				std::cout << "Intern creates " << F->getName() << std::endl;
-				break ;
-			case 2:
-				F = new Shrubbery(target);
-				std::cout << "Intern creates " << F->getName() << std::endl;
-				break;
+			type = i;
+			break ;
 		}
 	}
-	catch (std::exception &e)
+	switch (type)
 	{
-		std::cout << "Intern can't create a new form because: " << e.what() << std::endl;
+		case -1:
+			throw FormIncorrectType();
+		case 0:
+			F = new Presidential(target);
+			std::cout << "Intern creates " << F->getName() << std::endl;
+			break ;
+		case 1:
+			F = new Robotomy(target);
+			std::cout << "Intern creates " << F->getName() << std::endl;
+			break ;
+		case 2:
+			F = new Shrubbery(target);
+			std::cout << "Intern creates " << F->getName() << std::endl;
+			break;
 	}
 	return (F);
 }

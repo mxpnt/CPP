@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 14:47:05 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/21 09:28:16 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < 3 && ppf[i] != NULL; ++i)
 		delete ppf[i];
 	return (0);
 }

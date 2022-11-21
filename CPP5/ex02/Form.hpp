@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 11:52:07 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/18 12:52:01 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/21 09:07:18 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	Form();
 	Form(std::string const name, size_t const sign, size_t const exec);
 	Form(Form const &f);
-	~Form();
+	virtual ~Form();
 
 	Form	&operator=(Form const &rhs);
 
