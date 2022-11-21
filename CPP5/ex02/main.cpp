@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 09:43:37 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/21 09:21:07 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:55:46 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 		Presidential	Form("TH");
 		two.executeForm(Form);
 		two.signForm(Form);
-		std::cout << "\n";
+		std::cout << std::endl;
 		one.executeForm(Form);
 		one.signForm(Form);
 		one.executeForm(Form);
@@ -47,7 +47,7 @@ int	main(void)
 		Robotomy	Form("Bipboop");
 		two.executeForm(Form);
 		two.signForm(Form);
-		std::cout << "\n";
+		std::cout << std::endl;
 		one.executeForm(Form);
 		one.signForm(Form);
 		one.executeForm(Form);
@@ -62,7 +62,7 @@ int	main(void)
 		Shrubbery	Form("Woooha");
 		two.executeForm(Form);
 		two.signForm(Form);
-		std::cout << "\n";
+		std::cout << std::endl;
 		one.executeForm(Form);
 		one.signForm(Form);
 		one.executeForm(Form);
