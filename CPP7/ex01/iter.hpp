@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:31:26 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/24 09:22:17 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 13:35:20 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	strmaj(T &str)
 			str[i] -= 32;
 	}
 }
+
+template <typename T>
+void	print(T &x) {std::cout << x << std::endl;}
 
 template <typename T>
 void	iter(T *tab, size_t size, void(*f)(T&))

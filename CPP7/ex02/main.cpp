@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:56:55 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/24 12:23:08 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 13:37:16 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	main(void)
 {
 	Array<int>	tab(6);
+	Array<int>	vide;
 
+	std::cout << vide << std::endl;
 	std::cout << tab << std::endl;
 	std::cout << tab.size() << std::endl;
 	for (size_t i = 0; i < 6; ++i)
