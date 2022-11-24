@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:48:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/24 15:40:21 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:41:50 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int main()
 // 	std::list<int> mstack;
 // 	mstack.push_back(5);
 // 	mstack.push_back(17);
-// 	std::cout << mstack.front() << std::endl;
-// 	mstack.pop_front();
+// 	std::cout << mstack.back() << std::endl;
+// 	mstack.pop_back();
 // 	std::cout << mstack.size() << std::endl;
 // 	mstack.push_back(3);
 // 	mstack.push_back(5);
