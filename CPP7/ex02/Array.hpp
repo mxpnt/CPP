@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:58:01 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/26 17:26:32 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 12:22:45 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@ private:
 	size_t	_size;
 public:
 	Array(){
-		this->_tab = NULL;
+		this->_tab = new T;
 		this->_size = 0;
 	};
 	Array(unsigned int n){
 		this->_tab = new T[n];
+		for (unsigned int i = 0; i < n; ++i)
+			this->_tab[i] = 0;
 		this->_size = n;
 	};
 	Array(Array const &f){
-		this->_tab = NULL;
+		this->_tab = f._tab;
 		this->_size = f.size();
 		*this = f;
 	};
@@ -41,8 +43,6 @@ public:
 	};
 
 	Array	&operator=(Array const &rhs){
-		if (this->_tab)
-			delete [] this->_tab;
 		if (rhs.size())
 		{
 			this->_tab = new T[rhs.size()];
@@ -64,13 +64,7 @@ public:
 	};
 
 	size_t	size() const {
-		size_t	i = 0;
-
-		if (!_tab)
-			return (0);
-		while (_tab[i])
-			++i;
-		return (i);
+		return (this->_size);
 	};
 	
 	class	IndexIncorrectException : public std::exception	{
