@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:35:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/25 17:47:54 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 09:05:19 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	convertChar(double n, std::string str)
 {
 	std::cout << "char: ";
-	if ((n > 0 && n < 33) || n == 127)
+	if ((n >= 0 && n < 33) || n == 127)
 		std::cout << "Non displayable" << std::endl;
 	else if (n > 127 || n > INT_MAX || n < 0 || n < INT_MIN || str == "nan" || str == "nanf")
 		std::cout << "Impossible" << std::endl;
@@ -55,7 +55,10 @@ void	convertFloat(double n)
 void	convertDouble(double n)
 {
 	std::cout << "double: ";
-	std::cout << n << std::endl;
+	std::cout << n;
+	if (fmodf(n, 1) == 0)
+		std::cout << ".0";
+	std::cout << std::endl;
 }
 
 int	main(int argc, char **argv)
