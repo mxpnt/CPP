@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:26:43 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 13:17:21 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 08:23:54 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	Presidential::execute(Bureaucrat const &executor) const
 	try
 	{
 		checkGradeSign(executor);
+		std::cout << executor.getName() << " execute " << this->getName() << std::endl;
 		std::cout << _target << " is forgiven by Zaphod Beeblebrox" << std::endl;
 	}
 	catch (std::exception &e)

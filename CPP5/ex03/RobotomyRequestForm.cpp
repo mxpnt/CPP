@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:18:10 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/15 14:36:05 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 08:22:45 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	Robotomy::execute(Bureaucrat const &executor) const
 	try
 	{
 		checkGradeSign(executor);
+		std::cout << executor.getName() << " execute " << this->getName() << std::endl;
 		std::cout << "VZZZZZZZZZZZZZzzzzzzzzZZZZZZZZZZZZzzzzzz...." << std::endl; 
 		if (n)
 			std::cout << _target << " has been robotomized" << std::endl;
