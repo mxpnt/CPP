@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:14:02 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/02 12:46:01 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 12:55:15 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(void)
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 	sp.print();
+	std::cout << std::endl;
 
 	Span sp2 = Span(10000);
 

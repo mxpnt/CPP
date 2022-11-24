@@ -6,11 +6,12 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:48:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/02 19:11:24 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 15:40:21 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
@@ -23,7 +24,8 @@ int main()
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
+	mstack.push(337);
+	mstack.push(137);
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -37,3 +39,29 @@ int main()
 	std::stack<int> s(mstack);
 	return (0);
 }
+
+// int main()
+// {
+// 	std::list<int> mstack;
+// 	mstack.push_back(5);
+// 	mstack.push_back(17);
+// 	std::cout << mstack.front() << std::endl;
+// 	mstack.pop_front();
+// 	std::cout << mstack.size() << std::endl;
+// 	mstack.push_back(3);
+// 	mstack.push_back(5);
+// 	mstack.push_back(737);
+// 	mstack.push_back(337);
+// 	mstack.push_back(137);
+// 	mstack.push_back(0);
+// 	std::list<int>::iterator it = mstack.begin();
+// 	std::list<int>::iterator ite = mstack.end();
+// 	++it;
+// 	--it;
+// 	while (it != ite)
+// 	{
+// 		std::cout << *it << std::endl;
+// 		++it;
+// 	}
+// 	return (0);
+// }

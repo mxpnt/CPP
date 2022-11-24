@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:11:48 by mapontil          #+#    #+#             */
-/*   Updated: 2022/10/27 20:05:18 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/24 12:53:09 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,5 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "**************************" << std::endl;
-
-	// int	tab[] = {6, 44, 24, 26};
-	// try {
-	// 	int result = easyfind(tab, 4);
-	// 	std::cout << result << std::endl;
-	// }
-	// catch (std::exception &e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
 	return (0);
 }
