@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:48:33 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/24 17:41:50 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 10:10:34 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,24 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
+	std::cout << "************************" << std::endl;
+	MutantStack<char> cstack;
+	char	c = 'c';
+
+	cstack.push('a');
+	cstack.push('b');
+	for (int i = 0; i < 24; ++i)
+	{
+		cstack.push(c);
+		++c;
+	}
+	MutantStack<char>::iterator it2 = cstack.begin();
+	MutantStack<char>::iterator ite2 = cstack.end();
+	while (it2 != ite2)
+	{
+		std::cout << *it2 << std::endl;
+		++it2;
+	}
 	return (0);
 }
 
