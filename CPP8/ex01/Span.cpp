@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:18:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 08:54:28 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 09:50:00 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ unsigned int	Span::longestSpan() const
 			min = static_cast<long long int>(*it);
 		++i;
 	}
-	std::cout << "max: " << max << " min: " << min << std::endl;
 	if (max < 0)
 		result = ((max * -1) + min) * -1;
 	else
@@ -137,10 +136,10 @@ void	Span::addNNumber(int nb, unsigned int x)
 		throw TooMuchElemAdd();
 	else
 	{
-		for (unsigned int i = 0; i < x; ++i)
-		{
-			this->_v.at(_nbElem) = nb;
-			this->_nbElem++;
-		}
+		std::vector<int>::const_iterator	it = _v.begin();
+		this->_v.erase(_v.begin() + _nbElem, _v.begin() + _nbElem + x);
+		std::advance(it, _nbElem);
+		this->_v.insert(it, x, nb);
+		this->_nbElem += x;
 	}
 }
