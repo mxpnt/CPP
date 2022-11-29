@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:18:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 09:50:00 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:36:17 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,11 +123,6 @@ void	Span::print() const
 {
 	std::for_each(_v.begin(), _v.end(), spaceFunction);
 	std::cout << std::endl;
-}
-
-void	Span::addN(int i, int n)
-{
-	_v.at(i) = n;
 }
 
 void	Span::addNNumber(int nb, unsigned int x)

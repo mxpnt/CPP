@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:14:02 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 09:50:17 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:36:34 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void)
 
 	try {
 		sp2.addNNumber(4, 10000);
-		sp2.addNNumber(6, 3);
+		// sp2.addNNumber(6, 3);
 		// sp2.print();
 	}
 	catch (std::exception &e)

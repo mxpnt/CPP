@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:15:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 09:12:06 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:36:21 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ public:
 	unsigned int	shortestSpan() const;
 	unsigned int	longestSpan() const;
 	void			print() const;
-	void			addN(int i, int n);
 	void			addNNumber(int nb, unsigned int x);
 
 	class	TooMuchElemAdd : public std::exception	{
