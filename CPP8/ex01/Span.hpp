@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:15:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/02 12:40:38 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 08:54:14 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ public:
 
 	Span	&operator=(Span const &rhs);
 
-	void	addNumber(int nb);
-	int		shortestSpan() const;
-	int		longestSpan() const;
-	void	print() const;
-	void	addN(int i, int n);
-	void	addNNumber(int nb, int x);
+	void			addNumber(int nb);
+	unsigned int	shortestSpan() const;
+	unsigned int	longestSpan() const;
+	void			print() const;
+	void			addN(int i, int n);
+	void			addNNumber(int nb, unsigned int x);
 
 	class	TooMuchElemAdd : public std::exception	{
 		public:

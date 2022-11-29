@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:11:48 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/24 18:29:49 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 08:33:57 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,28 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try {
+		int result = easyfind(lst1, 7);
+		std::cout << result << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << "**************************" << std::endl;
 
 	std::cout << "VECTOR:" << std::endl;
 	std::vector<int>	v1(100, 100);
 	try {
 		int result = easyfind(v1, 100);
+		std::cout << result << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try {
+		int result = easyfind(v1, 99);
 		std::cout << result << std::endl;
 	}
 	catch (std::exception &e)
