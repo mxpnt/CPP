@@ -6,7 +6,11 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:12:04 by mapontil          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/11/29 08:14:19 by mapontil         ###   ########.fr       */
+=======
+/*   Updated: 2022/11/24 18:32:41 by mapontil         ###   ########.fr       */
+>>>>>>> 3644e75539feef1b24f35256e6944d03e6c86536
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +45,17 @@ int	easyfind(T container, int n)
 	// // int	save = *container.begin();
 
 
+
 	// for (it = container.begin(); it != ite; ++it)
 	// {
 	// 	if (static_cast<int>(*it) == n)
 	// 		break ;
 	// 	// save = static_cast<int>(*it);
 	// }
-	// if (it != ite && static_cast<int>(*it) == n)
-	// 	return (static_cast<int>(*it));
-	// else
-	// 	throw NotFindOccur();
-	if (std::any_of(it, ite, equal))
-	{
-		
-	}
-
+	if (std::any_of(container.begin(), container.end(), ))
+		return (static_cast<int>(*it));
+	else
+		throw NotFindOccur();
 }
 
 #endif
