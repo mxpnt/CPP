@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:15:20 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 11:36:21 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:37:50 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,12 @@ public:
 		public:
 			virtual const char* what() const throw() {
 				return ("Too many int want to be added");
+			}
+	};
+	class	NotEnoughElem : public std::exception	{
+		public:
+			virtual const char* what() const throw() {
+				return ("Not enough elem to search a span");
 			}
 	};
 };

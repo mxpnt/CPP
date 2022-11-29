@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 17:12:04 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 08:34:14 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 13:33:04 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ class	NotFindOccur : public std::exception {
 template <typename T>
 int	easyfind(T container, int n)
 {
-	typename T::const_iterator	it = container.begin();
+	typename T::const_iterator	it;
 	typename T::const_iterator	ite = container.end();
 
-	if (std::find(it, ite, n) != ite)
+	it = std::find(container.begin(), container.end(), n);
+	if (it != ite)
 		return (static_cast<int>(*it));
 	else
 		throw NotFindOccur();

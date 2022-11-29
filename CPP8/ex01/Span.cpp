@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:18:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 11:36:17 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:23:43 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,27 +64,19 @@ void	Span::addNumber(int nb)
 unsigned int	Span::shortestSpan() const
 {
 	unsigned int		result = 0;
-	unsigned int		new_result = 0;
-	long long int		value = 0;
-	long long int		next_value = 0;
-	long long int		max = 0;
-	long long int		min = 0;
+	long int			new_result;
 
-	for (size_t i = 0; i < _nbElem; ++i)
+	if (_nbElem == 0 || _nbElem == 1)
+		throw NotEnoughElem();
+	std::vector<int>	v(_v);
+	std::sort(v.begin(), v.begin() + _nbElem);
+	for (unsigned int i = 0; i < _nbElem - 1; ++i)
 	{
-		value = _v.at(i);
-		for (size_t j = i + 1; j < _nbElem; ++j)
-		{
-			next_value = _v.at(j);
-			max = std::max(value, next_value);
-			min = std::min(value, next_value);
-			if (max < 0)
-				new_result = ((max * -1) + min) * -1;
-			else
-				new_result = max - min;
-			if (result == 0 || result > new_result)
-				result = new_result;
-		}
+		new_result = v.at(i) - v.at(i + 1);
+		if (new_result < 0)
+			new_result *= -1;
+		if (result == 0 || result > new_result)
+			result = new_result;
 	}
 	return (result);
 }
@@ -92,21 +84,13 @@ unsigned int	Span::shortestSpan() const
 unsigned int	Span::longestSpan() const
 {
 	unsigned int				result = 0;
-	long long int				max = 0;
-	long long int				min = 0;
-	unsigned int				i = 0;
+	int							max;
+	int							min;
 
-	std::vector<int>::const_iterator	it;
-	std::vector<int>::const_iterator	ite = _v.end();
-
-	for (it = _v.begin(); it != ite && i < _nbElem; ++it)
-	{
-		if (max == 0 || max < static_cast<long long int>(*it))
-			max = static_cast<long long int>(*it);
-		if (min == 0 || min > static_cast<long long int>(*it))
-			min = static_cast<long long int>(*it);
-		++i;
-	}
+	if (_nbElem == 0 || _nbElem == 1)
+		throw NotEnoughElem();
+	max = *std::max_element(_v.begin(), _v.begin() + _nbElem);
+	min = *std::min_element(_v.begin(), _v.begin() + _nbElem);
 	if (max < 0)
 		result = ((max * -1) + min) * -1;
 	else
