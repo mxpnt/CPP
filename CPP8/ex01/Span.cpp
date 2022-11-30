@@ -6,7 +6,7 @@
 /*   By: mapontil <mapontil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:18:05 by mapontil          #+#    #+#             */
-/*   Updated: 2022/11/29 14:23:43 by mapontil         ###   ########.fr       */
+/*   Updated: 2022/11/30 12:14:24 by mapontil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Span::addNumber(int nb)
 unsigned int	Span::shortestSpan() const
 {
 	unsigned int		result = 0;
-	long int			new_result;
+	long long int		new_result;
 
 	if (_nbElem == 0 || _nbElem == 1)
 		throw NotEnoughElem();
@@ -72,7 +72,7 @@ unsigned int	Span::shortestSpan() const
 	std::sort(v.begin(), v.begin() + _nbElem);
 	for (unsigned int i = 0; i < _nbElem - 1; ++i)
 	{
-		new_result = v.at(i) - v.at(i + 1);
+		new_result = static_cast<long>(v.at(i)) - static_cast<long>(v.at(i + 1));
 		if (new_result < 0)
 			new_result *= -1;
 		if (result == 0 || result > new_result)
