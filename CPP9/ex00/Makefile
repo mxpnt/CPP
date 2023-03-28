@@ -1,7 +1,8 @@
 NAME		=	btc
 
 SRCS		=	main.cpp \
-				BitcoinExchange.cpp
+				BitcoinExchange.cpp \
+				splitString.cpp
 
 INC			=	BitcoinExchange.hpp
 
