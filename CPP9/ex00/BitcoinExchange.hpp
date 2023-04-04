@@ -32,6 +32,8 @@ public:
 	void	mapping_inputDB();
 	void	mapping_dataDB();
 
+	void	convert();
+
 	class	CustomException : public std::exception	{
 		private:
 			std::string	msg;

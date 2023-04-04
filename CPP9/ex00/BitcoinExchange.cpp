@@ -12,8 +12,9 @@ BitcoinExchange::BitcoinExchange(std::string *inDB, std::string *data, size_t si
 	this->inputDB_size = size_in;
 	this->dataDB = data;
 	this->dataDB_size = size_data;
-	std::cout << "ok constru" << std::endl;
+	mapping_dataDB();
 	mapping_inputDB();
+	// std::cout << inputMap.size() << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &f)
@@ -36,7 +37,6 @@ BitcoinExchange	&BitcoinExchange::operator=(BitcoinExchange const &rhs)
 
 /***** MEMBER FUNCTIONS *****/
 
-// Maybe del '-' & i == 13 conditions
 void	BitcoinExchange::valid_format(size_t index)
 {
 	size_t	i = 0;
@@ -86,7 +86,7 @@ void	BitcoinExchange::valid_format(size_t index)
 				break ;
 			else if (!isdigit(inputDB[index][i]) && (inputDB[index][i] != '.' || (inputDB[index][i] == '.' && (dot > 1 || i == 13))))
 			{
-				std::string	msg = "Error: bad input => q" + inputDB[index].substr(13);
+				std::string	msg = "Error: bad input => " + inputDB[index].substr(13);
 				msg = msg.substr(0, msg.length() - 1);
 				throw BitcoinExchange::CustomException(msg);
 			}
@@ -100,7 +100,6 @@ void	BitcoinExchange::valid_format(size_t index)
 	}
 }
 
-// Check année bissextile (février) + mois 30/31
 void	BitcoinExchange::valid_date(size_t index)
 {
 	int	year = std::stoi(inputDB[index].substr(0, 4));
@@ -147,7 +146,6 @@ void	BitcoinExchange::valid_value(size_t index)
 void	BitcoinExchange::mapping_inputDB()
 {
 	size_t i = 1;
-	// Check si inputDB_size != 0 ?
 	while (i < inputDB_size)
 	{
 		std::string	date;
@@ -157,18 +155,24 @@ void	BitcoinExchange::mapping_inputDB()
 			valid_format(i);
 			valid_date(i);
 			valid_value(i);
-			std::cout << "mapping " << i << std::endl;
+			// std::cout << "mapping " << i << std::endl;
 			date = inputDB[i].substr(0, inputDB[i].find_first_of(' '));
 			value = std::stof(inputDB[i].substr(inputDB[i].find_last_of(' '), std::string::npos - 1));
-			this->inputMap[date] = value;
-			std::cout << "date: " << date << " | value: " << value << std::endl;
+
+			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);
+			
+			std::cout << date << " => " << value << " = " << value * it_data->second << std::endl;
+
+			// this->inputMap[date] = value;
+			// std::cout << "date: " << date << " | value: " << value << std::endl;
 		}
 		catch (std::exception &e)
 		{
-			std::cout << "catch  " << i << std::endl;
-			date = e.what();
-			value = 0;
-			std::cout << date << " | " << value << std::endl;
+			// std::cout << "catch  " << i << std::endl;
+			std::cout << e.what() << std::endl;
+			// date = e.what();
+			// value = -1;
+			// std::cout << date << " | " << value << std::endl;
 		}
 		++i;
 	}
@@ -180,8 +184,29 @@ void	BitcoinExchange::mapping_dataDB()
 	while (i < dataDB_size)
 	{
 		std::string	date = dataDB[i].substr(0, dataDB[i].find_first_of(','));
-		float		value = std::stof(dataDB[i].substr(dataDB[i].find_first_of(','), std::string::npos - 1));
+		float		value = std::stof(dataDB[i].substr(dataDB[i].find_first_of(',') + 1, std::string::npos - 1));
 		this->dataMap[date] = value;
 		++i;
+	}
+}
+
+void	BitcoinExchange::convert()
+{
+	std::map<std::string, float>::iterator	it_input = inputMap.begin();
+
+	while (it_input != inputMap.end())
+	{
+		// std::cout << it_input->first << std::endl;
+		if (it_input->first.substr(0, 3) == "Err")
+		{
+			std::cout << it_input->first << std::endl;
+		}
+		else
+		{
+			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(it_input->first);
+			
+			std::cout << it_input->first << " => " << it_input->second << " = " << it_input->second * it_data->second << std::endl;
+		}
+		++it_input;
 	}
 }

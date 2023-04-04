@@ -69,7 +69,7 @@ int	main(int argc, char **argv)
 	// }
 
 	BitcoinExchange	BC(splitStr, splitData, input_size, delim_counter(bufStr, '\n'));
-	std::cout << "ok" << std::endl;
+	// BC.convert();
 	return (0);
 }
 
