@@ -35,19 +35,42 @@ int	main(int argc, char **argv)
 	if (ifs.fail())
 	{
 		ifs.close();
-		std::cerr << "Error: could not open file." << std::endl;
+		std::cerr << "Error: could not open input file." << std::endl;
 	}
 	std::stringstream	buf;
 	buf << ifs.rdbuf();
 	ifs.close();
 	std::string	bufStr = buf.str();
+	buf.str(""); // Clear buf
 	std::string	*splitStr = split(bufStr, '\n');
+	size_t		input_size = delim_counter(bufStr, '\n');
 	// size_t i = 0;
 	// while (i < delim_counter(bufStr, '\n'))
 	// {
 	// 	std::cout << "index " << i << ": " << splitStr[i];
 	// 	++i;
 	// }
-	BitcoinExchange	BC(splitStr, delim_counter(bufStr, '\n'));
+
+	ifs.open("data.csv");
+	if (ifs.fail())
+	{
+		ifs.close();
+		std::cerr << "Error: could not open data file." << std::endl;
+	}
+	buf << ifs.rdbuf();
+	ifs.close();
+	bufStr = buf.str();
+	std::string	*splitData = split(bufStr, '\n');
+	// size_t i = 0;
+	// while (i < 1)
+	// {
+	// 	std::cout << "index " << i << ": " << splitData[i];
+	// 	++i;
+	// }
+
+	BitcoinExchange	BC(splitStr, splitData, input_size, delim_counter(bufStr, '\n'));
+	std::cout << "ok" << std::endl;
 	return (0);
 }
+
+// Delete splitStr

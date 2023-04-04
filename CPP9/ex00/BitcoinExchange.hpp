@@ -6,23 +6,43 @@
 # include <fstream>
 # include <sstream>
 # include <map>
+# include <limits.h>
 
 size_t		delim_counter(std::string str, char delim);
 std::string	*split(std::string str, char delim);
 class	BitcoinExchange	{
 private:
-	std::string	*inputDB;
-	size_t		inputDB_size;
-	std::map<std::string, float> inputMap;
+	std::string						*inputDB;
+	std::string						*dataDB;
+	size_t							inputDB_size;
+	size_t							dataDB_size;
+	std::map<std::string, float>	inputMap;
+	std::map<std::string, float>	dataMap;
 public:
 	BitcoinExchange();
-	BitcoinExchange(std::string *inDB, size_t size);
+	BitcoinExchange(std::string *inDB, std::string *data, size_t size_in, size_t size_data);
 	BitcoinExchange(BitcoinExchange const &f);
 	~BitcoinExchange();
 
 	BitcoinExchange	&operator=(BitcoinExchange const &rhs);
 
-	std::map<std::string, float>	mapping_inputDB();
+	void	valid_format(size_t index);
+	void	valid_date(size_t index);
+	void	valid_value(size_t index);
+	void	mapping_inputDB();
+	void	mapping_dataDB();
+
+	class	CustomException : public std::exception	{
+		private:
+			std::string	msg;
+		public:
+			CustomException(std::string m): msg(m) {}
+			virtual ~CustomException() throw() {};
+			virtual const char* what() const throw()
+			{
+				return (msg.c_str());
+			}
+	};
 };
 
 #endif
