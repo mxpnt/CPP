@@ -44,12 +44,6 @@ int	main(int argc, char **argv)
 	buf.str(""); // Clear buf
 	std::string	*splitStr = split(bufStr, '\n');
 	size_t		input_size = delim_counter(bufStr, '\n');
-	// size_t i = 0;
-	// while (i < delim_counter(bufStr, '\n'))
-	// {
-	// 	std::cout << "index " << i << ": " << splitStr[i];
-	// 	++i;
-	// }
 
 	ifs.open("data.csv");
 	if (ifs.fail())
@@ -61,18 +55,10 @@ int	main(int argc, char **argv)
 	ifs.close();
 	bufStr = buf.str();
 	std::string	*splitData = split(bufStr, '\n');
-	// size_t i = 0;
-	// while (i < 1)
-	// {
-	// 	std::cout << "index " << i << ": " << splitData[i];
-	// 	++i;
-	// }
 
 	BitcoinExchange	BC(splitStr, splitData, input_size, delim_counter(bufStr, '\n'));
+
 	delete [] splitStr;
 	delete [] splitData;
-	// BC.convert();
 	return (0);
 }
-
-// Delete splitStr
