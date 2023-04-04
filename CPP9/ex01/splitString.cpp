@@ -30,5 +30,7 @@ std::string	*split(std::string str, char delim)
 		if (found == std::string::npos)
 			splitstr[i] = str.substr(0, std::string::npos);
 	}
+	if (i == 0)
+		splitstr[i] = str.substr(0, std::string::npos);
 	return (splitstr);
 }
