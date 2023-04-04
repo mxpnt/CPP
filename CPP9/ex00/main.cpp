@@ -69,6 +69,8 @@ int	main(int argc, char **argv)
 	// }
 
 	BitcoinExchange	BC(splitStr, splitData, input_size, delim_counter(bufStr, '\n'));
+	delete [] splitStr;
+	delete [] splitData;
 	// BC.convert();
 	return (0);
 }
