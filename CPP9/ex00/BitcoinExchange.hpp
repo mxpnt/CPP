@@ -8,8 +8,10 @@
 # include <map>
 # include <limits.h>
 
+/***** splitString.cpp *****/
 size_t		delim_counter(std::string str, char delim);
 std::string	*split(std::string str, char delim);
+
 class	BitcoinExchange	{
 private:
 	std::string						*inputDB;
