@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cerr << "Error: wrong number of arguments: ./btc <*.txt>." << std::endl;
+		std::cerr << "Error: wrong number of arguments: ./btc <*.txt>" << std::endl;
 		return (1);
 	}
 	std::string	file = argv[1];
