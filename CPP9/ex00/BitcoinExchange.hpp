@@ -18,7 +18,6 @@ private:
 	std::string						*dataDB;
 	size_t							inputDB_size;
 	size_t							dataDB_size;
-	std::map<std::string, float>	inputMap;
 	std::map<std::string, float>	dataMap;
 public:
 	BitcoinExchange();
@@ -31,10 +30,8 @@ public:
 	void	valid_format(size_t index);
 	void	valid_date(size_t index);
 	void	valid_value(size_t index);
-	void	mapping_inputDB();
 	void	mapping_dataDB();
-
-	void	convert();
+	void	processExchange();
 
 	class	CustomException : public std::exception	{
 		private:

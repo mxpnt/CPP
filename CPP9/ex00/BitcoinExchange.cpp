@@ -13,8 +13,7 @@ BitcoinExchange::BitcoinExchange(std::string *inDB, std::string *data, size_t si
 	this->dataDB = data;
 	this->dataDB_size = size_data;
 	mapping_dataDB();
-	mapping_inputDB();
-	// std::cout << inputMap.size() << std::endl;
+	processExchange();
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &f)
@@ -30,8 +29,10 @@ BitcoinExchange::~BitcoinExchange()
 
 BitcoinExchange	&BitcoinExchange::operator=(BitcoinExchange const &rhs)
 {
-	// Check si existe pour delete avant copie ?
 	this->inputDB = rhs.inputDB;
+	this->inputDB_size = rhs.inputDB_size;
+	this->dataDB = rhs.dataDB;
+	this->dataDB_size = rhs.dataDB_size;
 	return (*this);
 }
 
@@ -143,7 +144,7 @@ void	BitcoinExchange::valid_value(size_t index)
 	}
 }
 
-void	BitcoinExchange::mapping_inputDB()
+void	BitcoinExchange::processExchange()
 {
 	size_t i = 1;
 	while (i < inputDB_size)
@@ -155,24 +156,16 @@ void	BitcoinExchange::mapping_inputDB()
 			valid_format(i);
 			valid_date(i);
 			valid_value(i);
-			// std::cout << "mapping " << i << std::endl;
+
 			date = inputDB[i].substr(0, inputDB[i].find_first_of(' '));
 			value = std::stof(inputDB[i].substr(inputDB[i].find_last_of(' '), std::string::npos - 1));
 
-			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);
-			
+			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);	
 			std::cout << date << " => " << value << " = " << value * it_data->second << std::endl;
-
-			// this->inputMap[date] = value;
-			// std::cout << "date: " << date << " | value: " << value << std::endl;
 		}
 		catch (std::exception &e)
 		{
-			// std::cout << "catch  " << i << std::endl;
 			std::cout << e.what() << std::endl;
-			// date = e.what();
-			// value = -1;
-			// std::cout << date << " | " << value << std::endl;
 		}
 		++i;
 	}
@@ -187,26 +180,5 @@ void	BitcoinExchange::mapping_dataDB()
 		float		value = std::stof(dataDB[i].substr(dataDB[i].find_first_of(',') + 1, std::string::npos - 1));
 		this->dataMap[date] = value;
 		++i;
-	}
-}
-
-void	BitcoinExchange::convert()
-{
-	std::map<std::string, float>::iterator	it_input = inputMap.begin();
-
-	while (it_input != inputMap.end())
-	{
-		// std::cout << it_input->first << std::endl;
-		if (it_input->first.substr(0, 3) == "Err")
-		{
-			std::cout << it_input->first << std::endl;
-		}
-		else
-		{
-			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(it_input->first);
-			
-			std::cout << it_input->first << " => " << it_input->second << " = " << it_input->second * it_data->second << std::endl;
-		}
-		++it_input;
 	}
 }
