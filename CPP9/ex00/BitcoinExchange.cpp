@@ -43,15 +43,18 @@ void	BitcoinExchange::valid_format(size_t index)
 	size_t	i = 0;
 	size_t	dot = 0;
 
-	if (inputDB[index].length() < 14)
-		throw BitcoinExchange::CustomException("Error: bad input => should be \"****-**-** | *\"");
+	if (inputDB[index].length() == 1)
+	{
+		std::string	msg = "Error: bad input => " + inputDB[index];
+		throw BitcoinExchange::CustomException(msg);
+	}
 	while (i < inputDB[index].length() - 1)
 	{
 		if ((i >= 0 && i <= 3) || i == 5 || i == 6 || i == 8 || i == 9)
 		{
 			if (!isdigit(inputDB[index][i]))
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index].substr(0, 10);
+				std::string	msg = "Error: bad input => " + inputDB[index];
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -59,7 +62,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (inputDB[index][i] != '-')
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index].substr(0, 10);
+				std::string	msg = "Error: bad input => " + inputDB[index];
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -67,7 +70,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (inputDB[index][i] != ' ')
 			{
-				std::string msg = "Error: bad format";
+				std::string	msg = "Error: bad input => " + inputDB[index];
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -75,7 +78,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (inputDB[index][i] != '|')
 			{
-				std::string msg = "Error: bad format";
+				std::string	msg = "Error: bad input => " + inputDB[index];
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -87,7 +90,7 @@ void	BitcoinExchange::valid_format(size_t index)
 				break ;
 			else if (!isdigit(inputDB[index][i]) && (inputDB[index][i] != '.' || (inputDB[index][i] == '.' && (dot > 1 || i == 13))))
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index].substr(13);
+				std::string	msg = "Error: bad input => " + inputDB[index];
 				msg = msg.substr(0, msg.length() - 1);
 				throw BitcoinExchange::CustomException(msg);
 			}
@@ -96,7 +99,7 @@ void	BitcoinExchange::valid_format(size_t index)
 	}
 	if (inputDB[index][i - 1] == '.')
 	{
-		std::string	msg = "Error: bad input => " + inputDB[index].substr(13, std::string::npos - 1);
+		std::string	msg = "Error: bad input => " + inputDB[index];
 		throw BitcoinExchange::CustomException(msg);
 	}
 }
@@ -165,7 +168,7 @@ void	BitcoinExchange::processExchange()
 		}
 		catch (std::exception &e)
 		{
-			std::cout << e.what() << std::endl;
+			std::cout << e.what();
 		}
 		++i;
 	}
