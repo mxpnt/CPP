@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	buf << ifs.rdbuf();
 	ifs.close();
 	std::string	bufStr = buf.str();
-	buf.str(""); // Clear buf
+	buf.str("");
 	std::string	*splitStr = split(bufStr, '\n');
 	size_t		input_size = delim_counter(bufStr, '\n');
 
