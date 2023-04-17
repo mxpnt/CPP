@@ -163,7 +163,6 @@ void	BitcoinExchange::processExchange()
 			date = inputDB[i].substr(0, inputDB[i].find_first_of(' '));
 			value = std::stof(inputDB[i].substr(inputDB[i].find_last_of(' '), std::string::npos - 1));
 
-			// std::cout << date << std::endl;
 			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);
 			std::map<std::string, float>::iterator	it_save = dataMap.begin();
 			if (it_data == dataMap.end())
@@ -177,8 +176,6 @@ void	BitcoinExchange::processExchange()
 			if (date != it_data->first && it_data != dataMap.begin())
 				it_data--;
 			std::cout << date << " => " << value << " = " << value * it_data->second << std::endl;
-			// std::cout << it_data->first << std::endl;
-			// std::cout << 737.216 * 1236.63 << std::endl;
 		}
 		catch (std::exception &e)
 		{
