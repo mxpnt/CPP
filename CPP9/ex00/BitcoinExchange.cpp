@@ -45,7 +45,7 @@ void	BitcoinExchange::valid_format(size_t index)
 
 	if (inputDB[index].length() == 1)
 	{
-		std::string	msg = "Error: bad input => " + inputDB[index];
+		std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 	while (i < inputDB[index].length() - 1)
@@ -54,7 +54,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (!isdigit(inputDB[index][i]))
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index];
+				std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -62,7 +62,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (inputDB[index][i] != '-')
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index];
+				std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -70,7 +70,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (inputDB[index][i] != ' ')
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index];
+				std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -78,7 +78,7 @@ void	BitcoinExchange::valid_format(size_t index)
 		{
 			if (inputDB[index][i] != '|')
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index];
+				std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
@@ -90,16 +90,16 @@ void	BitcoinExchange::valid_format(size_t index)
 				break ;
 			else if (!isdigit(inputDB[index][i]) && (inputDB[index][i] != '.' || (inputDB[index][i] == '.' && (dot > 1 || i == 13))))
 			{
-				std::string	msg = "Error: bad input => " + inputDB[index];
-				msg = msg.substr(0, msg.length() - 1);
+				std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
+				msg = msg.substr(0, msg.length());
 				throw BitcoinExchange::CustomException(msg);
 			}
 		}
 		++i;
 	}
-	if (inputDB[index][i - 1] == '.')
+	if ((inputDB[index][i - 1] == '.' && inputDB[index][i] == '\n') || (inputDB[index][i] == '.'))
 	{
-		std::string	msg = "Error: bad input => " + inputDB[index];
+		std::string	msg = "Error: bad input => " + inputDB[index] + "\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 }
@@ -112,17 +112,17 @@ void	BitcoinExchange::valid_date(size_t index)
 	
 	if (month > 12 || month < 1 || day > 31 || day < 1 || year < 0)
 	{
-		std::string	msg = "Error: invalid date";
+		std::string	msg = "Error: invalid date\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 	else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
 	{
-		std::string	msg = "Error: invalid day";
+		std::string	msg = "Error: invalid day\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 	else if (month == 2 && (day > 29 || (day > 28 && (year % 4) != 0)))
 	{
-		std::string	msg = "Error: invalid day in february (leap year)";
+		std::string	msg = "Error: invalid day in february (leap year)\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 }
@@ -133,7 +133,7 @@ void	BitcoinExchange::valid_value(size_t index)
 
 	if (value < 0)
 	{
-		std::string	msg = "Error: not a positive value";
+		std::string	msg = "Error: not a positive value\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 	try
@@ -142,7 +142,7 @@ void	BitcoinExchange::valid_value(size_t index)
 	}
 	catch (std::exception &e)
 	{
-		std::string	msg = "Error: too large value";
+		std::string	msg = "Error: too large value\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
 }
@@ -163,8 +163,22 @@ void	BitcoinExchange::processExchange()
 			date = inputDB[i].substr(0, inputDB[i].find_first_of(' '));
 			value = std::stof(inputDB[i].substr(inputDB[i].find_last_of(' '), std::string::npos - 1));
 
-			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);	
+			// std::cout << date << std::endl;
+			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);
+			std::map<std::string, float>::iterator	it_save = dataMap.begin();
+			if (it_data == dataMap.end())
+			{
+				while (it_save != dataMap.end())
+				{
+					it_data = it_save;
+					it_save++;
+				}
+			}
+			if (date != it_data->first && it_data != dataMap.begin())
+				it_data--;
 			std::cout << date << " => " << value << " = " << value * it_data->second << std::endl;
+			// std::cout << it_data->first << std::endl;
+			// std::cout << 737.216 * 1236.63 << std::endl;
 		}
 		catch (std::exception &e)
 		{
