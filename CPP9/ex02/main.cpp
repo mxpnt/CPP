@@ -34,9 +34,9 @@ int	main(int argc, char **argv)
 	if (invalidArg(argv))
 		return (2);
 	PmergeMe	test(argv);
-	// test.vecSort();
-	// test.vecPrint();
-	test.dequeSort();
-	test.dequePrint();
+	test.vecSort();
+	test.vecPrint();
+	// test.dequeSort();
+	// test.dequePrint();
 	return (0);
 }

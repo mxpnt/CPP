@@ -50,7 +50,7 @@ void	PmergeMe::vecMergeSort(int first, int last)
 		return ;
 	if (last - first + 1 <= THRESHOLD)
 	{
-		vecInsertSort(first, last + 1);
+		vecInsertSort(first, last);
 	}
 	else
 	{
@@ -143,7 +143,7 @@ void	PmergeMe::dequeMergeSort(int first, int last)
 		return ;
 	if (last - first + 1 <= THRESHOLD)
 	{
-		dequeInsertSort(first, last + 1);
+		dequeInsertSort(first, last);
 	}
 	else
 	{
