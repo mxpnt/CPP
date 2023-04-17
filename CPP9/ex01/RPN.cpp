@@ -1,94 +1,94 @@
 #include "RPN.hpp"
 
-static int	addition(std::deque<long int> *stack)
+static int	addition(std::stack<long int> *stack)
 {
 	long	n1 = 0;
 	long	n2 = 0;
 
 	if (stack->size())
 	{
-		n2 = stack->front();
-		stack->pop_front();
+		n2 = stack->top();
+		stack->pop();
 	}
 	if (stack->size())
 	{
-		n1 = stack->front();
-		stack->pop_front();
+		n1 = stack->top();
+		stack->pop();
 	}
 	else
 	{
 		std::cout << "Error: bad expression" << std::endl;
 		return (1);
 	}
-	stack->push_front(n1 + n2);
-	std::cout << n1 << " + " << n2 << " = "<< stack->front() << std::endl;
+	stack->push(n1 + n2);
+	std::cout << n1 << " + " << n2 << " = "<< stack->top() << std::endl;
 	return (0);
 }
 
-static int	substraction(std::deque<long int> *stack)
+static int	substraction(std::stack<long int> *stack)
 {
 	long	n1 = 0;
 	long	n2 = 0;
 
 	if (stack->size())
 	{
-		n2 = stack->front();
-		stack->pop_front();
+		n2 = stack->top();
+		stack->pop();
 	}
 	if (stack->size())
 	{
-		n1 = stack->front();
-		stack->pop_front();
+		n1 = stack->top();
+		stack->pop();
 	}
 	else
 	{
 		std::cout << "Error: bad expression" << std::endl;
 		return (1);
 	}
-	stack->push_front(n1 - n2);
-	std::cout << n1 << " - " << n2 << " = "<< stack->front() << std::endl;
+	stack->push(n1 - n2);
+	std::cout << n1 << " - " << n2 << " = "<< stack->top() << std::endl;
 	return (0);
 }
 
-static int	multiplication(std::deque<long int> *stack)
+static int	multiplication(std::stack<long int> *stack)
 {
 	long	n1 = 0;
 	long	n2 = 0;
 
 	if (stack->size())
 	{
-		n2 = stack->front();
-		stack->pop_front();
+		n2 = stack->top();
+		stack->pop();
 	}
 	if (stack->size())
 	{
-		n1 = stack->front();
-		stack->pop_front();
+		n1 = stack->top();
+		stack->pop();
 	}
 	else
 	{
 		std::cout << "Error: bad expression" << std::endl;
 		return (1);
 	}
-	stack->push_front(n1 * n2);
-	std::cout << n1 << " * " << n2 << " = "<< stack->front() << std::endl;
+	stack->push(n1 * n2);
+	std::cout << n1 << " * " << n2 << " = "<< stack->top() << std::endl;
 	return (0);
 }
 
-static int	division(std::deque<long int> *stack)
+static int	division(std::stack<long int> *stack)
 {
 	long	n1 = 0;
 	long	n2 = 0;
 
 	if (stack->size())
 	{
-		n2 = stack->front();
-		stack->pop_front();
+		n2 = stack->top();
+		stack->pop();
 	}
 	if (stack->size())
 	{
-		n1 = stack->front();
-		stack->pop_front();
+		n1 = stack->top();
+		stack->pop();
 	}
 	else
 	{
@@ -100,15 +100,15 @@ static int	division(std::deque<long int> *stack)
 		std::cout << "Error: division by 0 not possible" << std::endl;
 		return (1);
 	}
-	stack->push_front(n1 / n2);
-	std::cout << n1 << " / " << n2 << " = " << stack->front() << std::endl;
+	stack->push(n1 / n2);
+	std::cout << n1 << " / " << n2 << " = " << stack->top() << std::endl;
 	return (0);
 }
 
 void	calculator(std::string *str, size_t size)
 {
 	size_t			i = 0;
-	std::deque<long int>	stack;
+	std::stack<long int>	stack;
 
 	while (i < size + 1)
 	{
@@ -116,7 +116,7 @@ void	calculator(std::string *str, size_t size)
 		if (str[i].size() <= 3)
 		{
 			if (isnumber(str[i][0]) || (str[i][0] == '-' && isnumber(str[i][1])))
-				stack.push_front(stol(str[i]));
+				stack.push(stol(str[i]));
 			else if (str[i][0] == '+')
 			{
 				if (addition(&stack))
@@ -145,5 +145,5 @@ void	calculator(std::string *str, size_t size)
 		}
 		++i;
 	}
-	std::cout << stack.front() << std::endl;
+	std::cout << stack.top() << std::endl;
 }

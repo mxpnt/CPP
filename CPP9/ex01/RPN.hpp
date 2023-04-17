@@ -2,7 +2,7 @@
 # define RPN_HPP
 
 # include <iostream>
-# include <deque>
+# include <stack>
 
 /***** splitString.cpp *****/
 size_t		delim_counter(std::string str, char delim);
