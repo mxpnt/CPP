@@ -5,6 +5,7 @@
 # include <string>
 # include <vector>
 # include <deque>
+# include <sys/time.h>
 
 # define THRESHOLD 16
 
@@ -19,6 +20,8 @@ public:
 	~PmergeMe();
 
 	PmergeMe	&operator=(PmergeMe const &rhs);
+
+	void	exec();
 
 	void	vecSort();
 	void	vecMergeSort(int first, int last);

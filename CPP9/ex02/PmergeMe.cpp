@@ -39,6 +39,37 @@ PmergeMe	&PmergeMe::operator=(PmergeMe const &rhs)
 
 /***** MEMBER FUNCTIONS *****/
 
+void	PmergeMe::exec()
+{
+	std::cout << "Before (vector): ";
+	vecPrint();
+	std::cout << "Before (deque): ";
+	dequePrint();
+
+	struct timeval startVec, endVec;
+    double execTimeVec;
+
+    gettimeofday(&startVec, NULL);
+    vecSort();
+    gettimeofday(&endVec, NULL);
+    execTimeVec = static_cast<double>((endVec.tv_sec - startVec.tv_sec) * 1000000 + (endVec.tv_usec - startVec.tv_usec));
+	std::cout << "After (vector): ";
+	vecPrint();
+	std::cout << "Time to process a range of " << vecPMM.size() << " elements with std::vector : " << execTimeVec << " µs" << std::endl;
+
+	struct timeval startDeque, endDeque;
+    double execTimeDeque;
+
+    gettimeofday(&startDeque, NULL);
+    dequeSort();
+    gettimeofday(&endDeque, NULL);
+    execTimeDeque = static_cast<double>((endDeque.tv_sec - startDeque.tv_sec) * 1000000 + (endDeque.tv_usec - startDeque.tv_usec));
+	std::cout << "After (deque): ";
+	dequePrint();
+	std::cout << "Time to process a range of " << dequePMM.size() << " elements with std::deque : "<< execTimeDeque << " µs" << std::endl;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
 void	PmergeMe::vecSort()
 {
 	vecMergeSort(0, vecPMM.size() - 1);
