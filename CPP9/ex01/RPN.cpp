@@ -145,5 +145,8 @@ void	calculator(std::string *str, size_t size)
 		}
 		++i;
 	}
-	std::cout << stack.top() << std::endl;
+	if (stack.size() == 1)
+		std::cout << stack.top() << std::endl;
+	else
+		std::cout << "Error: incomplete expression" << std::endl;
 }
