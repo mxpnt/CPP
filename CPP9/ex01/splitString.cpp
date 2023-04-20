@@ -23,7 +23,7 @@ std::string	*split(std::string str, char delim)
 	size_t	found = str.find_first_of(delim);
 	while (found != std::string::npos)
 	{
-		splitstr[i] = str.substr(0, str.find_first_of(delim) + 1);
+		splitstr[i] = str.substr(0, str.find_first_of(delim));
 		str.erase(0, str.find_first_of(delim) + 1);
 		++i;
 		found = str.find_first_of(delim);

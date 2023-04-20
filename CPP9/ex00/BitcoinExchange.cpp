@@ -106,9 +106,12 @@ void	BitcoinExchange::valid_format(size_t index)
 
 void	BitcoinExchange::valid_date(size_t index)
 {
-	int	year = std::stoi(inputDB[index].substr(0, 4));
-	int	month = std::stoi(inputDB[index].substr(5, 2));
-	int	day = std::stoi(inputDB[index].substr(8, 2));
+	std::string	syear = inputDB[index].substr(0, 4);
+	int	year = atoi(syear.c_str());
+	std::string	smonth = inputDB[index].substr(5, 2);
+	int	month = atoi(smonth.c_str());
+	std::string sday = inputDB[index].substr(8, 2);
+	int	day = atoi(sday.c_str());
 	
 	if (month > 12 || month < 1 || day > 31 || day < 1 || year < 0)
 	{
@@ -129,7 +132,9 @@ void	BitcoinExchange::valid_date(size_t index)
 
 void	BitcoinExchange::valid_value(size_t index)
 {
-	float	value = std::stof(inputDB[index].substr(inputDB[index].find_last_of(' '), std::string::npos - 1));
+	char		*endPtr;
+	std::string	svalue = inputDB[index].substr(inputDB[index].find_last_of(' '), std::string::npos - 1);
+	double		value = strtod(svalue.c_str(), &endPtr);
 
 	if (value < 0)
 	{
@@ -138,7 +143,10 @@ void	BitcoinExchange::valid_value(size_t index)
 	}
 	try
 	{
-		stoi(inputDB[index].substr(inputDB[index].find_last_of(' '), std::string::npos - 1));
+		std::string	svalue = inputDB[index].substr(inputDB[index].find_last_of(' '), std::string::npos - 1);
+		long long int n = atoll(svalue.c_str());
+		if (n > INT_MAX)
+			throw ;
 	}
 	catch (std::exception &e)
 	{
@@ -153,7 +161,7 @@ void	BitcoinExchange::processExchange()
 	while (i < inputDB_size)
 	{
 		std::string	date;
-		float		value;
+		double		value;
 		try
 		{
 			valid_format(i);
@@ -161,7 +169,10 @@ void	BitcoinExchange::processExchange()
 			valid_value(i);
 
 			date = inputDB[i].substr(0, inputDB[i].find_first_of(' '));
-			value = std::stof(inputDB[i].substr(inputDB[i].find_last_of(' '), std::string::npos - 1));
+			char		*endPtr;
+			std::string	svalue = inputDB[i].substr(inputDB[i].find_last_of(' '), std::string::npos - 1);
+			value = strtod(svalue.c_str(), &endPtr);
+
 
 			std::map<std::string, float>::iterator	it_data = dataMap.lower_bound(date);
 			std::map<std::string, float>::iterator	it_save = dataMap.begin();
@@ -191,7 +202,9 @@ void	BitcoinExchange::mapping_dataDB()
 	while (i < dataDB_size)
 	{
 		std::string	date = dataDB[i].substr(0, dataDB[i].find_first_of(','));
-		float		value = std::stof(dataDB[i].substr(dataDB[i].find_first_of(',') + 1, std::string::npos - 1));
+		char		*endPtr;
+		std::string	svalue = dataDB[i].substr(dataDB[i].find_first_of(',') + 1, std::string::npos - 1);
+		double		value = strtod(svalue.c_str(), &endPtr);
 		this->dataMap[date] = value;
 		++i;
 	}

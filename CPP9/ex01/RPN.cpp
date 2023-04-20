@@ -21,7 +21,7 @@ static int	addition(std::stack<long int> *stack)
 		return (1);
 	}
 	stack->push(n1 + n2);
-	std::cout << n1 << " + " << n2 << " = "<< stack->top() << std::endl;
+	// std::cout << n1 << " + " << n2 << " = "<< stack->top() << std::endl;
 	return (0);
 }
 
@@ -46,7 +46,7 @@ static int	substraction(std::stack<long int> *stack)
 		return (1);
 	}
 	stack->push(n1 - n2);
-	std::cout << n1 << " - " << n2 << " = "<< stack->top() << std::endl;
+	// std::cout << n1 << " - " << n2 << " = "<< stack->top() << std::endl;
 	return (0);
 }
 
@@ -71,7 +71,7 @@ static int	multiplication(std::stack<long int> *stack)
 		return (1);
 	}
 	stack->push(n1 * n2);
-	std::cout << n1 << " * " << n2 << " = "<< stack->top() << std::endl;
+	// std::cout << n1 << " * " << n2 << " = "<< stack->top() << std::endl;
 	return (0);
 }
 
@@ -101,7 +101,7 @@ static int	division(std::stack<long int> *stack)
 		return (1);
 	}
 	stack->push(n1 / n2);
-	std::cout << n1 << " / " << n2 << " = " << stack->top() << std::endl;
+	// std::cout << n1 << " / " << n2 << " = " << stack->top() << std::endl;
 	return (0);
 }
 
@@ -112,11 +112,10 @@ void	calculator(std::string *str, size_t size)
 
 	while (i < size + 1)
 	{
-		// Check if str[i] >= 10 ?
-		if (str[i].size() <= 3)
+		if (str[i].size() == 1)
 		{
-			if (isnumber(str[i][0]) || (str[i][0] == '-' && isnumber(str[i][1])))
-				stack.push(stol(str[i]));
+			if (isdigit(str[i][0]))
+				stack.push(atol(str[i].c_str()));
 			else if (str[i][0] == '+')
 			{
 				if (addition(&stack))
@@ -146,7 +145,12 @@ void	calculator(std::string *str, size_t size)
 		++i;
 	}
 	if (stack.size() == 1)
-		std::cout << stack.top() << std::endl;
+	{
+		if (stack.top() > INT_MAX || stack.top() < INT_MIN)
+			std::cout << "Error: value < INT_MIN or value > INT_MAX" << std::endl;
+		else
+			std::cout << stack.top() << std::endl;
+	}
 	else
 		std::cout << "Error: incomplete expression" << std::endl;
 }

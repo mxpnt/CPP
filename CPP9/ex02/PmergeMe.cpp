@@ -12,7 +12,7 @@ PmergeMe::PmergeMe(char **argv)
 
 	while (argv[i])
 	{
-		int	n = std::stoi(argv[i]);
+		int	n = atoi(argv[i]);
 		this->vecPMM.push_back(n);
 		this->dequePMM.push_back(n);
 		++i;
@@ -156,8 +156,15 @@ void	PmergeMe::vecInsertSort(int mid, int last)
 
 void	PmergeMe::vecPrint()
 {
-	for (size_t i = 0; i < vecPMM.size(); ++i)
+	size_t	i = 0;
+
+	while (i < vecPMM.size() && i < 5)
+	{
 		std::cout << vecPMM[i] << " ";
+		++i;
+	}
+	if (i == 5 && vecPMM.size() > 5)
+		std::cout << "[...]";
 	std::cout << "\n";
 }
 
@@ -249,7 +256,14 @@ void	PmergeMe::dequeInsertSort(int mid, int last)
 
 void	PmergeMe::dequePrint()
 {
-	for (size_t i = 0; i < dequePMM.size(); ++i)
+	size_t	i = 0;
+
+	while (i < dequePMM.size() && i < 5)
+	{
 		std::cout << dequePMM[i] << " ";
+		++i;
+	}
+	if (i == 5 && dequePMM.size() > 5)
+		std::cout << "[...]";
 	std::cout << "\n";
 }

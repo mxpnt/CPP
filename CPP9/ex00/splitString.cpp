@@ -35,10 +35,12 @@ std::string	*split(std::string str, char delim)
 		++i;
 		found = str.find_first_of(delim);
 		if (found == std::string::npos)
-			splitstr[i] = str.substr(0, std::string::npos);
+		{
+			if (str.size())
+				splitstr[i] = str.substr(0, std::string::npos);
+		}
 	}
 	if (i == 0)
 		splitstr[i] = str.substr(0, std::string::npos);
-
 	return (splitstr);
 }

@@ -6,6 +6,9 @@
 # include <vector>
 # include <deque>
 # include <sys/time.h>
+# include <stdlib.h>
+# include <ctype.h>
+# include <limits.h>
 
 # define THRESHOLD 16
 

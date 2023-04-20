@@ -32,7 +32,6 @@ int	main(int argc, char **argv)
 	ifs.close();
 	bufStr = buf.str();
 	std::string	*splitData = split(bufStr, '\n');
-
 	BitcoinExchange	BC(splitStr, splitData, input_size, delim_counter(bufStr, '\n'));
 
 	delete [] splitStr;

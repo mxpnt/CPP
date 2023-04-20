@@ -7,6 +7,7 @@
 # include <sstream>
 # include <map>
 # include <limits.h>
+# include <stdlib.h>
 
 /***** splitString.cpp *****/
 size_t		delim_counter(std::string str, char delim);

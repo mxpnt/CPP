@@ -3,6 +3,9 @@
 
 # include <iostream>
 # include <stack>
+# include <ctype.h>
+# include <stdlib.h>
+# include <limits.h>
 
 /***** splitString.cpp *****/
 size_t		delim_counter(std::string str, char delim);

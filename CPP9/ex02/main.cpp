@@ -5,18 +5,20 @@ static int	invalidArg(char **argv)
 	size_t	i = 1;
 	while (argv[i])
 	{
-		try
+		size_t	j = 0;
+		while (argv[i][j])
 		{
-			int	n = std::stoi(argv[i]);
-			if (n < 0)
+			if (!isdigit(argv[i][j]))
 			{
 				std::cout << "Error: arguments must be positive integers" << std::endl;
 				return (1);
 			}
+			++j;
 		}
-		catch (std::exception &e)
+		long long int	value = atoll(argv[i]);
+		if (value > INT_MAX)
 		{
-			std::cout << "Error: arguments must be positive integers" << std::endl;
+			std::cout << "Error: arguments too large" << std::endl;
 			return (1);
 		}
 		++i;
