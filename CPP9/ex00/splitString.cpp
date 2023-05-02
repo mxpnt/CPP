@@ -42,9 +42,5 @@ std::string	*split(std::string str, char delim)
 	}
 	if (i == 0)
 		splitstr[i] = str.substr(0, std::string::npos);
-<<<<<<< HEAD
-=======
-// ICI ERREUR
->>>>>>> 1f48728 (ex00 error handle ifs.empty/fail + date too soon + invalid date if len < 13)
 	return (splitstr);
 }
