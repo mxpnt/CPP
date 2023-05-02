@@ -133,7 +133,6 @@ void	BitcoinExchange::valid_date(size_t index)
 		std::string	msg = "Error: invalid date\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
-	//check si date avant 2009-01-02
 }
 
 void	BitcoinExchange::valid_value(size_t index)
