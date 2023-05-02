@@ -9,28 +9,40 @@ int	main(int argc, char **argv)
 	}
 	std::ifstream	ifs;
 	ifs.open(argv[1]);
-	if (ifs.fail())
+	if (ifs.fail()) //ifs.empty() ??
 	{
 		ifs.close();
-		std::cerr << "Error: could not open input file." << std::endl;
+		std::cerr << "Error: could not open input file" << std::endl;
+		return (1);
 	}
 	std::stringstream	buf;
 	buf << ifs.rdbuf();
 	ifs.close();
 	std::string	bufStr = buf.str();
+	if (bufStr == "")
+	{
+		std::cerr << "Error: empty file" << std::endl;
+		return (1);
+	}
 	buf.str("");
 	std::string	*splitStr = split(bufStr, '\n');
 	size_t		input_size = delim_counter(bufStr, '\n');
 
 	ifs.open("data.csv");
-	if (ifs.fail())
+	if (ifs.fail()) //ifs.empty() ??
 	{
 		ifs.close();
 		std::cerr << "Error: could not open data file." << std::endl;
+		return (1);
 	}
 	buf << ifs.rdbuf();
 	ifs.close();
 	bufStr = buf.str();
+	if (bufStr == "")
+	{
+		std::cerr << "Error: empty file" << std::endl;
+		return (1);
+	}
 	std::string	*splitData = split(bufStr, '\n');
 	BitcoinExchange	BC(splitStr, splitData, input_size, delim_counter(bufStr, '\n'));
 
