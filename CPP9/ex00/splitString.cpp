@@ -30,7 +30,7 @@ std::string	*split(std::string str, char delim)
 	size_t	found = str.find_first_of(delim);
 	while (found != std::string::npos)
 	{
-		splitstr[i] = str.substr(0, str.find_first_of(delim) + 1);
+		splitstr[i] = str.substr(0, str.find_first_of(delim));
 		str.erase(0, str.find_first_of(delim) + 1);
 		++i;
 		found = str.find_first_of(delim);
@@ -42,5 +42,9 @@ std::string	*split(std::string str, char delim)
 	}
 	if (i == 0)
 		splitstr[i] = str.substr(0, std::string::npos);
+<<<<<<< HEAD
+=======
+// ICI ERREUR
+>>>>>>> 1f48728 (ex00 error handle ifs.empty/fail + date too soon + invalid date if len < 13)
 	return (splitstr);
 }
