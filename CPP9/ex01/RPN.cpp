@@ -1,9 +1,9 @@
 #include "RPN.hpp"
 
-static int	addition(std::stack<long int> *stack)
+static int	addition(std::stack<float> *stack)
 {
-	long	n1 = 0;
-	long	n2 = 0;
+	float	n1 = 0;
+	float	n2 = 0;
 
 	if (stack->size())
 	{
@@ -25,10 +25,10 @@ static int	addition(std::stack<long int> *stack)
 	return (0);
 }
 
-static int	substraction(std::stack<long int> *stack)
+static int	substraction(std::stack<float> *stack)
 {
-	long	n1 = 0;
-	long	n2 = 0;
+	float	n1 = 0;
+	float	n2 = 0;
 
 	if (stack->size())
 	{
@@ -50,10 +50,10 @@ static int	substraction(std::stack<long int> *stack)
 	return (0);
 }
 
-static int	multiplication(std::stack<long int> *stack)
+static int	multiplication(std::stack<float> *stack)
 {
-	long	n1 = 0;
-	long	n2 = 0;
+	float	n1 = 0;
+	float	n2 = 0;
 
 	if (stack->size())
 	{
@@ -75,10 +75,10 @@ static int	multiplication(std::stack<long int> *stack)
 	return (0);
 }
 
-static int	division(std::stack<long int> *stack)
+static int	division(std::stack<float> *stack)
 {
-	long	n1 = 0;
-	long	n2 = 0;
+	float	n1 = 0;
+	float	n2 = 0;
 
 	if (stack->size())
 	{
@@ -108,7 +108,7 @@ static int	division(std::stack<long int> *stack)
 void	calculator(std::string *str, size_t size)
 {
 	size_t			i = 0;
-	std::stack<long int>	stack;
+	std::stack<float>	stack;
 
 	while (i < size + 1)
 	{
