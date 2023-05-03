@@ -50,7 +50,7 @@ void	BitcoinExchange::valid_format(size_t index)
 	}
 	while (i < inputDB[index].length() - 1)
 	{
-		if ((i >= 0 && i <= 3) || i == 5 || i == 6 || i == 8 || i == 9)
+		if (i <= 3 || i == 5 || i == 6 || i == 8 || i == 9)
 		{
 			if (!isdigit(inputDB[index][i]))
 			{
@@ -146,17 +146,7 @@ void	BitcoinExchange::valid_value(size_t index)
 		std::string	msg = "Error: not a positive value\n";
 		throw BitcoinExchange::CustomException(msg);
 	}
-	try
-	{
-		std::string	svalue = inputDB[index].substr(inputDB[index].find_last_of(' '), std::string::npos - 1);
-		long long int n = atoll(svalue.c_str());
-		if (n > 1000)
-		{
-			std::string	msg = "Error: too large value\n";
-			throw BitcoinExchange::CustomException(msg);
-		}
-	}
-	catch (std::exception &e)
+	if (value > 1000)
 	{
 		std::string	msg = "Error: too large value\n";
 		throw BitcoinExchange::CustomException(msg);
