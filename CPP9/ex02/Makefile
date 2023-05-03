@@ -7,7 +7,7 @@ INC			=	PmergeMe.hpp
 
 OBJS		=	${addprefix objs/, ${SRCS:.cpp=.o}}
 
-CXX			=	clang++
+CXX			=	c++
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
