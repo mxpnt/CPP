@@ -146,10 +146,7 @@ void	calculator(std::string *str, size_t size)
 	}
 	if (stack.size() == 1)
 	{
-		if (stack.top() > INT_MAX || stack.top() < INT_MIN)
-			std::cout << "Error: value < INT_MIN or value > INT_MAX" << std::endl;
-		else
-			std::cout << stack.top() << std::endl;
+		std::cout << stack.top() << std::endl;
 	}
 	else
 		std::cout << "Error: incomplete expression" << std::endl;
